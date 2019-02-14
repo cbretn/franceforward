@@ -1,19 +1,26 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>france forward</title>
     <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
+    <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
 
   <body>
-    <h1>france forward</h1>
+    <%= render 'shared/navbar' %>
+    <%= render 'shared/flashes' %>
 
-    <%= yield %>
+    <div class="container">
+      <%= yield %>
+    </div>
 
-    <p>A very simple footer</p>
+    <%= render 'shared/footer' %>
+    <%= javascript_include_tag 'application' %>
+    <%= javascript_pack_tag 'application' %>
+
   </body>
 </html>
