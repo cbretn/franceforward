@@ -5,8 +5,14 @@ default: &default
 
 development:
   <<: *default
-  database: rails-mister-cocktail_development
+  database: franceforward_development
 
 test:
   <<: *default
-  database: rails-mister-cocktail_test
+  database: franceforward_test
+
+# production:
+#   <<: *default
+#   database: franceforward_production
+#   username: franceforward
+#   password: <%= ENV['FRANCEFORWARD_DATABASE_PASSWORD'] %>
