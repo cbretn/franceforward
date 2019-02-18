@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.5.3'
 
+# main features
 gem 'bootsnap', require: false
 gem 'devise'
 gem 'jbuilder', '~> 2.0'
@@ -9,8 +10,12 @@ gem 'puma'
 gem 'pundit'
 gem 'rails', '5.2.2'
 gem 'redis'
+
+# image management
+gem 'carrierwave', '~> 1.2'
 gem 'cloudinary', '~> 1.9.1'
 
+# CSS boilerplate
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3'
 gem 'font-awesome-sass', '~> 5.5.0'
