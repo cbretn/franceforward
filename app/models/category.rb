@@ -7,7 +7,4 @@ class Category < ApplicationRecord
 
   # associations
   has_many :themes
-  # has_one :description
-  # has_many :discussions
-  # has_many :actions
 end

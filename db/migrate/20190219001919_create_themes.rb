@@ -4,6 +4,7 @@ class CreateThemes < ActiveRecord::Migration[5.2]
       t.references :category, foreign_key: true
       t.string :name
       t.string :photo
+      t.text :content
 
       t.timestamps
     end
