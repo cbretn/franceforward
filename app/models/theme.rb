@@ -1,4 +1,4 @@
-class Category < ApplicationRecord
+class Theme < ApplicationRecord
   # uploads
   mount_uploader :photo, PhotoUploader
 
@@ -6,8 +6,5 @@ class Category < ApplicationRecord
   validates :name, presence: true, uniqueness: true
 
   # associations
-  has_many :themes
-  # has_one :description
-  # has_many :discussions
-  # has_many :actions
+  belongs_to :category
 end
