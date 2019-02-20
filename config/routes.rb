@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'categories/index'
-  get 'categories/show'
+  get 'description/show'
   devise_for :users
   root to: 'pages#home'
 
