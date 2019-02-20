@@ -6,5 +6,5 @@ class Category < ApplicationRecord
   validates :name, presence: true, uniqueness: true
 
   # associations
-  has_many :themes
+  has_many :themes, dependent: :destroy
 end
