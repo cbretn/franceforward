@@ -2,5 +2,5 @@
 <p>Find me in app/views/categories/index.html.erb</p>
 <% @categories.each do |category| %>
   <%= category.name %>
-  <%#= cl_image_tag @category.photo, height: 300, width: 400, crop: :fill %>
+  <%= cl_image_tag @category.photo, height: 300, width: 400, crop: :fill %>
 <% end %>

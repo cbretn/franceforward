@@ -1,6 +1,10 @@
 class Category < ApplicationRecord
+  # uploads
   mount_uploader :photo, PhotoUploader
 
+  # validations
   validates :name, presence: true, uniqueness: true
-  # has_many :themes
+
+  # associations
+  has_many :themes, dependent: :destroy
 end
