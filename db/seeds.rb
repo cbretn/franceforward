@@ -5,3 +5,268 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+puts "Cleaning databases..."
+
+User.destroy_all
+Category.destroy_all
+Theme.destroy_all
+Description.destroy_all
+Discussion.destroy_all
+Action.destroy_all
+ActionParticipation.destroy_all
+Conversation.destroy_all
+Message.destroy_all
+
+puts "Creating users..."
+
+charles = User.new(email: "charles-breton@hotmail.fr", password: "charles")
+# charles.remote_photo_url = "https://res.cloudinary.com/cbretn/image/upload/v1550217962/mnjhz9aerxvtgsr3c3tp.png"
+charles.save!
+
+lorenzo = User.new(email: "lorenzo@hotmail.fr", password: "lorenzo")
+# lorenzo.remote_photo_url = "https://res.cloudinary.com/cbretn/image/upload/v1550220466/o5idwsp16eh3pqk8zpcm.jpg"
+lorenzo.save!
+
+george = User.new(email: "george.s.ballard@outlook.com", password: "george")
+# george.remote_photo_url = "https://res.cloudinary.com/cbretn/image/upload/v1550218136/d82xmivgrtpqwj7k17a7.jpg"
+george.save!
+
+puts "Creating categories..."
+
+sante = Category.new(name: "Santé")
+sante.save!
+environnement = Category.new(name: "Environnement")
+environnement.save!
+cohesion = Category.new(name:"Cohésion Sociale")
+cohesion.save!
+epanouissement = Category.new(name:"Épanouissement Individuel")
+epanouissement.save!
+jes = Category.new(name:"Justice Économique & Sociale")
+jes.save!
+education = Category.new(name:"Éducation & Information")
+education.save!
+securite = Category.new(name:"Sécurité")
+securite.save!
+patrimoine = Category.new(name:"Patrimoine Culturel")
+patrimoine.save!
+systeme = Category.new(name:"Système National")
+systeme.save!
+
+puts "Creating themes..."
+
+tabagisme = Theme.new(name: "Tabagisme", content: "content not yet created", category: sante)
+tabagisme.save!
+antisemitisme = Theme.new(name: "Antisémitisme", content: "content not yet created", category: cohesion)
+antisemitisme.save!
+violence = Theme.new(name: "Violence et Délinquance", content: "content not yet created", category: securite)
+violence.save!
+chomage = Theme.new(name: "Chômage", content: "content not yet created", category: jes)
+chomage.save!
+pollution = Theme.new(name: "Pollution", content: "content not yet created", category: environnement)
+pollution.save!
+burnout = Theme.new(name: "Burn-out", content: "content not yet created", category: epanouissement)
+burnout.save!
+fakenews = Theme.new(name: "Esprit critique et fake news", content: "content not yet created", category: education)
+fakenews.save!
+cuisine = Theme.new(name: "Cuisine et Gastronomie", content: "content not yet created", category: patrimoine)
+cuisine.save!
+culture = Theme.new(name: "Culture", content: "content not yet created", category: systeme)
+culture.save!
+
+puts "Adding description to themes"
+
+tabagisme_desc = Description.new(content: "Tabagisme description Lorem Ipsum Exemple", theme: tabagisme)
+tabagisme_desc.save!
+antisemitisme_desc = Description.new(content: "Antisémitisme description Lorem Ipsum Exemple", theme: antisemitisme)
+antisemitisme_desc.save!
+violence_desc = Description.new(content: "Violence et Délinquance description Lorem Ipsum Exemple", theme: violence)
+violence_desc.save!
+chomage_desc = Description.new(content: "Chômage description Lorem Ipsum Exemple", theme: chomage)
+chomage_desc.save!
+pollution_desc = Description.new(content: "Pollution description Lorem Ipsum Exemple", theme: pollution)
+pollution_desc.save!
+burnout_desc = Description.new(content: "Burn-out description Lorem Ipsum Exemple", theme: burnout)
+burnout_desc.save!
+fakenews_desc = Description.new(content: "Esprit critique et fake news description Lorem Ipsum Exemple", theme: fakenews)
+fakenews_desc.save!
+cuisine_desc = Description.new(content: "Cuisine et Gastronomie description Lorem Ipsum Exemple", theme: cuisine)
+cuisine_desc.save!
+culture_desc = Description.new(content: "Culture description Lorem Ipsum Exemple", theme: culture)
+culture_desc.save!
+
+puts "Adding discussions to themes"
+
+# First discussion
+tabagisme_disc1 = Discussion.new(content: "Tabagisme description Lorem Ipsum Exemple", theme: tabagisme, user: charles, title: "tabagisme matters")
+tabagisme_disc1.save!
+antisemitisme_disc1 = Discussion.new(content: "Antisémitisme description Lorem Ipsum Exemple", theme: antisemitisme, user: charles, title: "antisemitisme matters")
+antisemitisme_disc1.save!
+violence_disc1 = Discussion.new(content: "Violence et Délinquance description Lorem Ipsum Exemple", theme: violence, user: charles, title: "violence matters")
+violence_disc1.save!
+chomage_disc1 = Discussion.new(content: "Chômage description Lorem Ipsum Exemple", theme: chomage, user: charles, title: "chomage matters")
+chomage_disc1.save!
+pollution_disc1 = Discussion.new(content: "Pollution description Lorem Ipsum Exemple", theme: pollution, user: charles, title: "pollution matters")
+pollution_disc1.save!
+burnout_disc1 = Discussion.new(content: "Burn-out description Lorem Ipsum Exemple", theme: burnout, user: charles, title: "burnout matters")
+burnout_disc1.save!
+fakenews_disc1 = Discussion.new(content: "Esprit critique et fake news description Lorem Ipsum Exemple", theme: fakenews, user: charles, title: "fakenews matters")
+fakenews_disc1.save!
+cuisine_disc1 = Discussion.new(content: "Cuisine et Gastronomie description Lorem Ipsum Exemple", theme: cuisine, user: charles, title: "cuisine matters")
+cuisine_disc1.save!
+culture_disc1 = Discussion.new(content: "Culture description Lorem Ipsum Exemple", theme: culture, user: charles, title: "culture matters")
+culture_disc1.save!
+
+# Second discussion
+tabagisme_disc2 = Discussion.new(content: "Tabagisme description Lorem Ipsum Exemple", theme: tabagisme, user: george, title: "tabagisme doesn't really matter")
+tabagisme_disc2.save!
+antisemitisme_disc2 = Discussion.new(content: "Antisémitisme description Lorem Ipsum Exemple", theme: antisemitisme, user: george, title: "antisemitisme doesn't really matter")
+antisemitisme_disc2.save!
+violence_disc2 = Discussion.new(content: "Violence et Délinquance description Lorem Ipsum Exemple", theme: violence, user: george, title: "violence doesn't really matter")
+violence_disc2.save!
+chomage_disc2 = Discussion.new(content: "Chômage description Lorem Ipsum Exemple", theme: chomage, user: george, title: "chomage doesn't really matter")
+chomage_disc2
+pollution_disc2 = Discussion.new(content: "Pollution description Lorem Ipsum Exemple", theme: pollution, user: george, title: "pollution doesn't really matter")
+pollution_disc2
+burnout_disc2 = Discussion.new(content: "Burn-out description Lorem Ipsum Exemple", theme: burnout, user: george, title: "burnout doesn't really matter")
+burnout_disc2
+fakenews_disc2 = Discussion.new(content: "Esprit critique et fake news description Lorem Ipsum Exemple", theme: fakenews, user: george, title: "fakenews doesn't really matter")
+fakenews_disc2
+cuisine_disc2 = Discussion.new(content: "Cuisine et Gastronomie description Lorem Ipsum Exemple", theme: cuisine, user: george, title: "cuisine doesn't really matter")
+cuisine_disc2
+culture_disc2 = Discussion.new(content: "Culture description Lorem Ipsum Exemple", theme: culture, user: george, title: "culture doesn't really matter")
+culture_disc2
+
+# Third discussion
+tabagisme_disc3 = Discussion.new(content: "Tabagisme description Lorem Ipsum Exemple", theme: tabagisme, user: george, title: "tabagisme doesn't really matter?")
+tabagisme_disc3.save!
+antisemitisme_disc3 = Discussion.new(content: "Antisémitisme description Lorem Ipsum Exemple", theme: antisemitisme, user: george, title: "antisemitisme doesn't really matter?")
+antisemitisme_disc3.save!
+violence_disc3 = Discussion.new(content: "Violence et Délinquance description Lorem Ipsum Exemple", theme: violence, user: george, title: "violence doesn't really matter?")
+violence_disc3.save!
+chomage_disc3 = Discussion.new(content: "Chômage description Lorem Ipsum Exemple", theme: chomage, user: george, title: "chomage doesn't really matter?")
+chomage_disc3
+pollution_disc3 = Discussion.new(content: "Pollution description Lorem Ipsum Exemple", theme: pollution, user: george, title: "pollution doesn't really matter?")
+pollution_disc3
+burnout_disc3 = Discussion.new(content: "Burn-out description Lorem Ipsum Exemple", theme: burnout, user: george, title: "burnout doesn't really matter?")
+burnout_disc3
+fakenews_disc3 = Discussion.new(content: "Esprit critique et fake news description Lorem Ipsum Exemple", theme: fakenews, user: george, title: "fakenews doesn't really matter?")
+fakenews_disc3
+cuisine_disc3 = Discussion.new(content: "Cuisine et Gastronomie description Lorem Ipsum Exemple", theme: cuisine, user: george, title: "cuisine doesn't really matter?")
+cuisine_disc3
+culture_disc3 = Discussion.new(content: "Culture description Lorem Ipsum Exemple", theme: culture, user: george, title: "culture doesn't really matter?")
+culture_disc3
+
+puts "Adding actions to themes"
+
+# First action
+tabagisme_act1 = Action.new(theme: tabagisme, user: charles, title: "tabagisme matters", description: "coming soon, stay tuned", location: "Paris, France", start_date: "03-03-2019", end_date: "03-11-2019")
+tabagisme_act1.save!
+antisemitisme_act1 = Action.new(theme: antisemitisme, user: charles, title: "antisemitisme matters", description: "coming soon, stay tuned", location: "Paris, France", start_date: "03-03-2019", end_date: "03-11-2019")
+antisemitisme_act1.save!
+violence_act1 = Action.new(theme: violence, user: charles, title: "violence matters", description: "coming soon, stay tuned", location: "Paris, France", start_date: "03-03-2019", end_date: "03-11-2019")
+violence_act1.save!
+chomage_act1 = Action.new(theme: chomage, user: charles, title: "chomage matters", description: "coming soon, stay tuned", location: "Paris, France", start_date: "03-03-2019", end_date: "03-11-2019")
+chomage_act1.save!
+pollution_act1 = Action.new(theme: pollution, user: charles, title: "pollution matters", description: "coming soon, stay tuned", location: "Paris, France", start_date: "03-03-2019", end_date: "03-11-2019")
+pollution_act1.save!
+burnout_act1 = Action.new(theme: burnout, user: charles, title: "burnout matters", description: "coming soon, stay tuned", location: "Paris, France", start_date: "03-03-2019", end_date: "03-11-2019")
+burnout_act1.save!
+fakenews_act1 = Action.new(theme: fakenews, user: charles, title: "fakenews matters", description: "coming soon, stay tuned", location: "Paris, France", start_date: "03-03-2019", end_date: "03-11-2019")
+fakenews_act1.save!
+cuisine_act1 = Action.new(theme: cuisine, user: charles, title: "cuisine matters", description: "coming soon, stay tuned", location: "Paris, France", start_date: "03-03-2019", end_date: "03-11-2019")
+cuisine_act1.save!
+culture_act1 = Action.new(theme: culture, user: charles, title: "culture matters", description: "coming soon, stay tuned", location: "Paris, France", start_date: "03-03-2019", end_date: "03-11-2019")
+culture_act1.save!
+
+# Second action
+tabagisme_act2 = Action.new(theme: tabagisme, user: george, title: "tabagisme doesn't really matter", description: "coming soon, stay tuned", location: "Paris, France", start_date: "03-03-2019", end_date: "03-11-2019")
+tabagisme_act2.save!
+antisemitisme_act2 = Action.new(theme: antisemitisme, user: george, title: "antisemitisme doesn't really matter", description: "coming soon, stay tuned", location: "Paris, France", start_date: "03-03-2019", end_date: "03-11-2019")
+antisemitisme_act2.save!
+violence_act2 = Action.new(theme: violence, user: george, title: "violence doesn't really matter", description: "coming soon, stay tuned", location: "Paris, France", start_date: "03-03-2019", end_date: "03-11-2019")
+violence_act2.save!
+chomage_act2 = Action.new(theme: chomage, user: george, title: "chomage doesn't really matter", description: "coming soon, stay tuned", location: "Paris, France", start_date: "03-03-2019", end_date: "03-11-2019")
+chomage_act2.save!
+pollution_act2 = Action.new(theme: pollution, user: george, title: "pollution doesn't really matter", description: "coming soon, stay tuned", location: "Paris, France", start_date: "03-03-2019", end_date: "03-11-2019")
+pollution_act2.save!
+burnout_act2 = Action.new(theme: burnout, user: george, title: "burnout doesn't really matter", description: "coming soon, stay tuned", location: "Paris, France", start_date: "03-03-2019", end_date: "03-11-2019")
+burnout_act2.save!
+fakenews_act2 = Action.new(theme: fakenews, user: george, title: "fakenews doesn't really matter", description: "coming soon, stay tuned", location: "Paris, France", start_date: "03-03-2019", end_date: "03-11-2019")
+fakenews_act2.save!
+cuisine_act2 = Action.new(theme: cuisine, user: george, title: "cuisine doesn't really matter", description: "coming soon, stay tuned", location: "Paris, France", start_date: "03-03-2019", end_date: "03-11-2019")
+cuisine_act2.save!
+culture_act2 = Action.new(theme: culture, user: george, title: "culture doesn't really matter", description: "coming soon, stay tuned", location: "Paris, France", start_date: "03-03-2019", end_date: "03-11-2019")
+culture_act2.save!
+
+# Third action
+tabagisme_act3 = Action.new(theme: tabagisme, user: george, title: "tabagisme doesn't really matter", description: "coming soon, stay tuned", location: "Paris, France", start_date: "03-03-2019", end_date: "03-11-2019")
+tabagisme_act3.save!
+antisemitisme_act3 = Action.new(theme: antisemitisme, user: george, title: "antisemitisme doesn't really matter", description: "coming soon, stay tuned", location: "Paris, France", start_date: "03-03-2019", end_date: "03-11-2019")
+antisemitisme_act3.save!
+violence_act3 = Action.new(theme: violence, user: george, title: "violence doesn't really matter", description: "coming soon, stay tuned", location: "Paris, France", start_date: "03-03-2019", end_date: "03-11-2019")
+violence_act3.save!
+chomage_act3 = Action.new(theme: chomage, user: george, title: "chomage doesn't really matter", description: "coming soon, stay tuned", location: "Paris, France", start_date: "03-03-2019", end_date: "03-11-2019")
+chomage_act3.save!
+pollution_act3 = Action.new(theme: pollution, user: george, title: "pollution doesn't really matter", description: "coming soon, stay tuned", location: "Paris, France", start_date: "03-03-2019", end_date: "03-11-2019")
+pollution_act3.save!
+burnout_act3 = Action.new(theme: burnout, user: george, title: "burnout doesn't really matter", description: "coming soon, stay tuned", location: "Paris, France", start_date: "03-03-2019", end_date: "03-11-2019")
+burnout_act3.save!
+fakenews_act3 = Action.new(theme: fakenews, user: george, title: "fakenews doesn't really matter", description: "coming soon, stay tuned", location: "Paris, France", start_date: "03-03-2019", end_date: "03-11-2019")
+fakenews_act3.save!
+cuisine_act3 = Action.new(theme: cuisine, user: george, title: "cuisine doesn't really matter", description: "coming soon, stay tuned", location: "Paris, France", start_date: "03-03-2019", end_date: "03-11-2019")
+cuisine_act3.save!
+culture_act3 = Action.new(theme: culture, user: george, title: "culture doesn't really matter", description: "coming soon, stay tuned", location: "Paris, France", start_date: "03-03-2019", end_date: "03-11-2019")
+culture_act3.save!
+
+puts "Adding participations to actions"
+
+ActionParticipation.new(action: tabagisme_act3, user: charles)
+ActionParticipation.new(action: tabagisme_act3, user: george)
+ActionParticipation.new(action: tabagisme_act3, user: lorenzo)
+
+ActionParticipation.new(action: antisemitisme_act2, user: charles)
+ActionParticipation.new(action: antisemitisme_act2, user: george)
+ActionParticipation.new(action: antisemitisme_act2, user: lorenzo)
+
+ActionParticipation.new(action: violence_act1, user: charles)
+ActionParticipation.new(action: violence_act1, user: george)
+ActionParticipation.new(action: violence_act1, user: lorenzo)
+
+ActionParticipation.new(action: chomage_act3, user: charles)
+ActionParticipation.new(action: chomage_act3, user: george)
+ActionParticipation.new(action: chomage_act3, user: lorenzo)
+
+ActionParticipation.new(action: pollution_act2, user: charles)
+ActionParticipation.new(action: pollution_act2, user: george)
+ActionParticipation.new(action: pollution_act2, user: lorenzo)
+
+ActionParticipation.new(action: burnout_act1, user: charles)
+ActionParticipation.new(action: burnout_act1, user: george)
+ActionParticipation.new(action: burnout_act1, user: lorenzo)
+
+ActionParticipation.new(action: fakenews_act3, user: charles)
+ActionParticipation.new(action: fakenews_act3, user: george)
+ActionParticipation.new(action: fakenews_act3, user: lorenzo)
+
+ActionParticipation.new(action: cuisine_act2, user: charles)
+ActionParticipation.new(action: cuisine_act2, user: george)
+ActionParticipation.new(action: cuisine_act2, user: lorenzo)
+
+ActionParticipation.new(action: culture_act1, user: charles)
+ActionParticipation.new(action: culture_act1, user: george)
+ActionParticipation.new(action: culture_act1, user: lorenzo)
+
+
+puts "Initiating conversations"
+
+charge = Conversation.new(user1: charles, user2: george)
+geozo = Conversation.new(user1: george, user2: lorenzo)
+chazo = Conversation.new(user1: charles, user2: lorenzo)
+
+puts "Populating conversations with messages"
+
+Message.new(user: charles, conversation: charge, body: "Hello")
+Message.new(user: charles, conversation: charge, body: "How are you?")
+Message.new(user: charles, conversation: charge, body: "Welcome to france forward")
+Message.new(user: george, conversation: charge, body: "Thanks")
+

@@ -4,5 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :conversations, :foreign_key => :user1_id
+  has_many :conversations, :foreign_key => :user1_id, dependent: :destroy
+  has_many :discussions, dependent: :destroy
+  has_many :actions, dependent: :destroy
 end
