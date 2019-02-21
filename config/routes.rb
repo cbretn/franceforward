@@ -1,10 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'messages/index'
-  get 'messages/new'
-  get 'messages/create'
-  get 'conversations/index'
-  get 'conversations/create'
   root to: 'pages#home'
 
   get 'home', to: 'pages#home', as: :home
@@ -12,8 +7,8 @@ Rails.application.routes.draw do
   get 'contact', to: 'pages#contact', as: :contact
 
   devise_for :users
-  resources :conversations do
-    resources :messages
+  resources :conversations, only: [:index, :create] do
+    resources :messages, only: [:index, :new, :create]
   end
 
   resources :categories, only: [:index, :show] do
