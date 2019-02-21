@@ -1,0 +1,14 @@
+<%= simple_form_for([@category, @theme, @action]) do |f| %>
+  <% if @action.errors.any? %>
+    <div class="errors-container">
+      <ul>
+        <% @action.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= f.input :title %>
+  <%= f.input :description %>
+  <%= f.submit "submit action", class: "btn btn-primary" %>
+<% end %>
