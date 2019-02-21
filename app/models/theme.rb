@@ -8,7 +8,7 @@ class Theme < ApplicationRecord
 
   # associations
   belongs_to :category
-  # has_one :description
-  # has_many :discussions
-  # has_many :actions
+  has_one :description, dependent: :destroy
+  has_many :discussions, dependent: :destroy
+  has_many :actions, dependent: :destroy
 end
