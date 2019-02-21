@@ -1,18 +1,12 @@
 Rails.application.routes.draw do
 
-  get 'discussions/index'
-  get 'discussions/new'
-  get 'discussions/create'
-  get 'discussions/show'
-  get 'discussions/edit'
-  get 'discussions/update'
-  get 'discussions/destroy'
-  devise_for :users
   root to: 'pages#home'
 
   get 'home', to: 'pages#home', as: :home
   get 'about', to: 'pages#about', as: :about
   get 'contact', to: 'pages#contact', as: :contact
+
+  devise_for :users
 
   resources :categories, only: [:index, :show] do
     resources :themes, only: [:index, :show] do
