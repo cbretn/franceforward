@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_20_100251) do
+ActiveRecord::Schema.define(version: 2019_02_20_101151) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,15 @@ ActiveRecord::Schema.define(version: 2019_02_20_100251) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["theme_id"], name: "index_descriptions_on_theme_id"
+  end
+
+  create_table "discussions", force: :cascade do |t|
+    t.text "content"
+    t.bigint "theme_id"
+    t.string "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["theme_id"], name: "index_discussions_on_theme_id"
   end
 
   create_table "themes", force: :cascade do |t|
@@ -53,5 +62,6 @@ ActiveRecord::Schema.define(version: 2019_02_20_100251) do
   end
 
   add_foreign_key "descriptions", "themes"
+  add_foreign_key "discussions", "themes"
   add_foreign_key "themes", "categories"
 end

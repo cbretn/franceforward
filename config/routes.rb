@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
 
-  get 'description/show'
+  get 'discussions/index'
+  get 'discussions/new'
+  get 'discussions/create'
+  get 'discussions/show'
+  get 'discussions/edit'
+  get 'discussions/update'
+  get 'discussions/destroy'
   devise_for :users
   root to: 'pages#home'
 
@@ -11,7 +17,7 @@ Rails.application.routes.draw do
   resources :categories, only: [:index, :show] do
     resources :themes, only: [:index, :show] do
       resource :description, only: [:show]
-      resources :discusions
+      resources :discussions
       resources :actions do
         resources :action_participations
       end
