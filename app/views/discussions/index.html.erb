@@ -4,3 +4,6 @@
   <%= discussion.title %>
   <%= discussion.content %>
 <% end %>
+
+<%= link_to "Add a discussion", new_category_theme_discussion_path([@category, @theme]), :class => "btn-medium" %>
+<%= link_to "Back to theme", category_theme_path([@category, @theme]), :class => "btn-medium" %>
