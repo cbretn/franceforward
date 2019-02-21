@@ -41,7 +41,7 @@ class ActionsController < ApplicationController
 
   def destroy
     authorize @action
-    @action = action.find(params[:id])
+    @action = Action.find(params[:id])
     # @theme = @action.theme
     @action.destroy
     redirect_to theme_path(@theme)
@@ -50,7 +50,7 @@ class ActionsController < ApplicationController
   private
 
   def set_action
-    @action = action.find(params[:id])
+    @action = Action.find(params[:id])
   end
 
   def action_params

@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
 
+  get 'action_participations/index'
+  get 'action_participations/new'
+  get 'action_participations/create'
+  get 'action_participations/show'
+  get 'action_participations/edit'
+  get 'action_participations/update'
+  get 'action_participations/destroy'
   get 'messages/index'
   get 'messages/new'
   get 'messages/create'
