@@ -1,0 +1,9 @@
+<h1>Discussions#index</h1>
+<p>Find me in app/views/discussions/index.html.erb</p>
+<% @discussions.each do |discussion| %>
+  <%= discussion.title %>
+  <%= discussion.content %>
+<% end %>
+
+<%= link_to "Add a discussion", new_category_theme_discussion_path([@category, @theme]), :class => "btn-medium" %>
+<%= link_to "Back to theme", category_theme_path([@category, @theme]), :class => "btn-medium" %>

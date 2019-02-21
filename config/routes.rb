@@ -1,18 +1,17 @@
 Rails.application.routes.draw do
 
-  get 'themes/index'
-  get 'themes/show'
-  devise_for :users
   root to: 'pages#home'
 
   get 'home', to: 'pages#home', as: :home
   get 'about', to: 'pages#about', as: :about
   get 'contact', to: 'pages#contact', as: :contact
 
+  devise_for :users
+
   resources :categories, only: [:index, :show] do
     resources :themes, only: [:index, :show] do
       resource :description, only: [:show]
-      resources :discusions
+      resources :discussions
       resources :actions do
         resources :action_participations
       end
