@@ -15,6 +15,11 @@ class User < ApplicationRecord
   has_many :discussions, dependent: :destroy
   has_many :actions, dependent: :destroy
 
+  # validations
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+  validates :location, presence: true
+
   private
 
   def set_default_avatar
