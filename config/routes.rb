@@ -20,5 +20,12 @@ Rails.application.routes.draw do
       end
     end
   end
+
+  # get '/themes', to: 'themes#all', as: themes
+  resource :themes, only: [] do
+    collection do
+      get 'all'
+    end
+  end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
