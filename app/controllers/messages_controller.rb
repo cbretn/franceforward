@@ -22,10 +22,6 @@ class MessagesController < ApplicationController
     @message = @conversation.messages.new
   end
 
-  def new
-    @message = @conversation.messages.new
-  end
-
   def create
     @message = @conversation.messages.new(message_params)
     if @message.save
