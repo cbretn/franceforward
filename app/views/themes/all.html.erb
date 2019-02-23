@@ -1,5 +1,5 @@
-<h1>Themes#index</h1>
-<p>Find me in app/views/themes/index.html.erb</p>
+<h1>Themes#all</h1>
+<p>Find me in app/views/themes/all.html.erb</p>
 <% @themes.each do |theme| %>
   <%= link_to category_theme_path(theme.category.id, theme) do %>
     <%= theme.category.name %>
