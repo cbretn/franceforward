@@ -8,7 +8,26 @@
   src: font-url('Avenir/AvenirMedium.eot');
   src: font-url('Avenir/AvenirMedium.eot?#iefix') format('embedded-opentype'),
        font-url('Avenir/AvenirMedium.woff') format('woff'),
-       font-url('Avenir/AvenirMedium.ttf') format('truetype')
+       font-url('Avenir/AvenirMedium.ttf') format('truetype');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Avenir";
+  src: font-url('Avenir/AvenirLight.eot');
+  src: font-url('Avenir/AvenirLight.eot?#iefix') format('embedded-opentype'),
+       font-url('Avenir/AvenirLight.woff') format('woff'),
+       font-url('Avenir/AvenirLight.ttf') format('truetype');
+  font-weight: lighter;
+}
+
+@font-face {
+  font-family: "Avenir";
+  src: font-url('Avenir/AvenirBold.eot');
+  src: font-url('Avenir/AvenirBold.eot?#iefix') format('embedded-opentype'),
+       font-url('Avenir/AvenirBold.woff') format('woff'),
+       font-url('Avenir/AvenirBold.ttf') format('truetype');
+  font-weight: bold;
 }
 
 @font-face {
@@ -17,6 +36,25 @@
   // src: font-url('Avenir/AvenirMedium.eot?#iefix') format('embedded-opentype'),
   //      font-url('Avenir/AvenirMedium.woff') format('woff'),
   //      font-url('Avenir/AvenirMedium.ttf') format('truetype')
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Futura";
+  src: font-url('Futura/futura_light_bt.ttf');
+  // src: font-url('Avenir/AvenirMedium.eot?#iefix') format('embedded-opentype'),
+  //      font-url('Avenir/AvenirMedium.woff') format('woff'),
+  //      font-url('Avenir/AvenirMedium.ttf') format('truetype')
+  font-weight: lighter;
+}
+
+@font-face {
+  font-family: "Futura";
+  src: font-url('Futura/futura_medium_bt.ttf');
+  // src: font-url('Avenir/AvenirMedium.eot?#iefix') format('embedded-opentype'),
+  //      font-url('Avenir/AvenirMedium.woff') format('woff'),
+  //      font-url('Avenir/AvenirMedium.ttf') format('truetype')
+  font-weight: bold;
 }
 
 $Avenir: "Avenir";
