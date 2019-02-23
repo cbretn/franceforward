@@ -7,17 +7,7 @@
     <%= cl_image_tag @theme.photo, height: 300, width: 400, crop: :fill %>
   <% end %>
 <%= @theme.content %>
-<h3>actions</h3>
-<ul>
-<% @theme.actions.each do |action| %>
-  <li>
-      <%= link_to category_theme_action_path(action.theme.category, action.theme, action) do %>
-        <%= action.title %><br>
-      <% end %>
-      <%= action.description %>
-  </li>
-<% end %>
-</ul>
+<%= link_to "See the full description", category_theme_description_path(@theme.category, @theme) %>
 <h3>discussions</h3>
 <ul>
 <% @theme.discussions.each do |discussion| %>
@@ -29,3 +19,16 @@
   </li>
 <% end %>
 </ul>
+<%= link_to "Add discussion", new_category_theme_discussion_path(@theme.category, @theme) %>
+<h3>actions</h3>
+<ul>
+<% @theme.actions.each do |action| %>
+  <li>
+      <%= link_to category_theme_action_path(action.theme.category, action.theme, action) do %>
+        <%= action.title %><br>
+      <% end %>
+      <%= action.description %>
+  </li>
+<% end %>
+</ul>
+<%= link_to "Add action", new_category_theme_action_path(@theme.category, @theme) %>

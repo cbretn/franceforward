@@ -21,7 +21,7 @@ class ActionsController < ApplicationController
     @action.user = current_user
     authorize @action
     if @action.save!
-      redirect_to theme_reviews_path(@theme)
+      redirect_to category_theme_discussion_path(@theme.category, @theme, @action)
     else
       render :new
     end

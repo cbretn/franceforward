@@ -1,4 +1,4 @@
-<%= simple_form_for([@theme, @discussion]) do |f| %>
+<%= simple_form_for [@theme.category, @theme, @discussion] do |f| %>
   <% if @discussion.errors.any? %>
     <div class="errors-container">
       <ul>
