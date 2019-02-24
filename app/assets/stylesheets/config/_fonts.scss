@@ -1,16 +1,66 @@
-// Import Google fonts
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Raleway:400,100,300,700,500");
-
-// Define fonts for body and headers
-$body-font: "Futura", "Montserrat", "sans-serif";
-$headers-font: "Avenir", "Montserrat", "sans-serif";
+// Import Google fonts (& other external sources)
+// @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Raleway:400,100,300,700,500");
+// @import url(http://fr.allfont.net/allfont.css?fonts=futura-normal);
 
 // To use a font file (.woff) uncomment following lines
-// @font-face {
-//   font-family: "Font Name";
-//   src: font-url('FontFile.eot');
-//   src: font-url('FontFile.eot?#iefix') format('embedded-opentype'),
-//        font-url('FontFile.woff') format('woff'),
-//        font-url('FontFile.ttf') format('truetype')
-// }
-// $my-font: "Font Name";
+@font-face {
+  font-family: "Avenir";
+  src: font-url('Avenir/AvenirMedium.eot');
+  src: font-url('Avenir/AvenirMedium.eot?#iefix') format('embedded-opentype'),
+       font-url('Avenir/AvenirMedium.woff') format('woff'),
+       font-url('Avenir/AvenirMedium.ttf') format('truetype');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Avenir";
+  src: font-url('Avenir/AvenirLight.eot');
+  src: font-url('Avenir/AvenirLight.eot?#iefix') format('embedded-opentype'),
+       font-url('Avenir/AvenirLight.woff') format('woff'),
+       font-url('Avenir/AvenirLight.ttf') format('truetype');
+  font-weight: lighter;
+}
+
+@font-face {
+  font-family: "Avenir";
+  src: font-url('Avenir/AvenirBold.eot');
+  src: font-url('Avenir/AvenirBold.eot?#iefix') format('embedded-opentype'),
+       font-url('Avenir/AvenirBold.woff') format('woff'),
+       font-url('Avenir/AvenirBold.ttf') format('truetype');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Futura";
+  src: font-url('Futura/Futura_Book_font.ttf');
+  // src: font-url('Avenir/AvenirMedium.eot?#iefix') format('embedded-opentype'),
+  //      font-url('Avenir/AvenirMedium.woff') format('woff'),
+  //      font-url('Avenir/AvenirMedium.ttf') format('truetype')
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Futura";
+  src: font-url('Futura/futura_light_bt.ttf');
+  // src: font-url('Avenir/AvenirMedium.eot?#iefix') format('embedded-opentype'),
+  //      font-url('Avenir/AvenirMedium.woff') format('woff'),
+  //      font-url('Avenir/AvenirMedium.ttf') format('truetype')
+  font-weight: lighter;
+}
+
+@font-face {
+  font-family: "Futura";
+  src: font-url('Futura/futura_medium_bt.ttf');
+  // src: font-url('Avenir/AvenirMedium.eot?#iefix') format('embedded-opentype'),
+  //      font-url('Avenir/AvenirMedium.woff') format('woff'),
+  //      font-url('Avenir/AvenirMedium.ttf') format('truetype')
+  font-weight: bold;
+}
+
+$Avenir: "Avenir";
+$Futura: "Futura";
+
+// Define fonts for body and headers
+$body-font: $Avenir, "Montserrat", "sans-serif";
+$headers-font: $Futura, $Avenir, "sans-serif";
+// font-family: 'Futura-Normal', arial;

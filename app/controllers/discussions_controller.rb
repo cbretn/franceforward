@@ -20,7 +20,7 @@ class DiscussionsController < ApplicationController
     @discussion.user = current_user
     authorize @discussion
     if @discussion.save!
-      redirect_to theme_reviews_path(@theme)
+      redirect_to category_theme_discussion_path(@theme.category, @theme, @discussion)
     else
       render :new
     end

@@ -1,9 +1,15 @@
 <h1>Actions#index</h1>
 <p>Find me in app/views/actions/index.html.erb</p>
-<% @actions.each do |action| %>
-  <%= action.title %>
-  <%= action.description %>
-<% end %>
-
-<%= link_to "Add a action", new_category_theme_action_path([@category, @theme]), :class => "btn-medium" %>
-<%= link_to "Back to theme", category_theme_path([@category, @theme]), :class => "btn-medium" %>
+<ul>
+  <% @actions.each do |action| %>
+    <li>
+      <%= link_to category_theme_action_path(params[:category_id], params[:theme_id], action) do %>
+        <%= action.title %><br>
+      <% end %>
+      <%= action.description %>
+    </li>
+        <!-- <br> -->
+  <% end %>
+</ul>
+<%= link_to "Add an action", new_category_theme_action_path(params[:category_id], params[:theme_id]), :class => "btn-medium" %>
+<%= link_to "Back to theme", category_theme_path(params[:category_id], params[:theme_id]), :class => "btn-medium" %>

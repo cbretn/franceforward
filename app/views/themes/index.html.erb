@@ -1,8 +1,13 @@
 <h1>Themes#index</h1>
 <p>Find me in app/views/themes/index.html.erb</p>
 <% @themes.each do |theme| %>
-  <%= theme.category %>
-  <%= theme.name %>
-  <%= cl_image_tag theme.photo, height: 300, width: 400, crop: :fill %>
+  <%= link_to category_theme_path(theme.category.id, theme) do %>
+    <%= theme.category.name %>
+    <%= theme.name %>
+    <% if theme.photo.file %>
+      <%= theme.photo %>
+      <%= cl_image_tag theme.photo, height: 300, width: 400, crop: :fill %>
+    <% end %>
+  <% end %>
   <%= theme.content %>
 <% end %>

@@ -4,23 +4,24 @@ class ActionsController < ApplicationController
 
   def index
     @theme = Theme.find(params[:theme_id])
-    @actions = policy_scope(action).where(theme: @theme)
+    @actions = policy_scope(Action).where(theme: @theme)
   end
 
   def new
-    @action = action.new
     @theme = Theme.find(params[:theme_id])
+    @category = @theme.category
+    @action = Action.new
     authorize @action
   end
 
   def create
-    @action = action.new(action_params)
+    @action = Action.new(action_params)
     @theme = Theme.find(params[:theme_id])
     @action.theme = @theme
     @action.user = current_user
     authorize @action
     if @action.save!
-      redirect_to theme_reviews_path(@theme)
+      redirect_to category_theme_discussion_path(@theme.category, @theme, @action)
     else
       render :new
     end
@@ -54,6 +55,7 @@ class ActionsController < ApplicationController
   end
 
   def action_params
-    params.require(:action).permit(:content, :title)
+    # params.require(:action).permit(:location, :title, :description, :start_date, :end_date, :description)
+    params.require(:action).permit(:title, :location, :start_date, :end_date, :description)
   end
 end
