@@ -1,5 +1,7 @@
-class DescriptionController < ApplicationController
+class DescriptionsController < ApplicationController
+  skip_before_action :authenticate_user!
+
   def show
-    @description = Description.find(params[:id])
+    @description = Theme.find(params[:theme_id]).description
   end
 end

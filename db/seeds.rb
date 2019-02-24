@@ -19,15 +19,15 @@ Message.destroy_all
 
 puts "Creating users..."
 
-charles = User.new(email: "charles-breton@hotmail.fr", password: "charles")
+charles = User.new(email: "charles-breton@hotmail.fr", password: "charles", first_name: "Charles", last_name:"Breton", location: "Paris, France")
 # charles.remote_photo_url = "https://res.cloudinary.com/cbretn/image/upload/v1550217962/mnjhz9aerxvtgsr3c3tp.png"
 charles.save!
 
-lorenzo = User.new(email: "lorenzo@hotmail.fr", password: "lorenzo")
+lorenzo = User.new(email: "lorenzo@hotmail.fr", password: "lorenzo", first_name: "Lorenzo", last_name: "Xavier", location: "London, England")
 # lorenzo.remote_photo_url = "https://res.cloudinary.com/cbretn/image/upload/v1550220466/o5idwsp16eh3pqk8zpcm.jpg"
 lorenzo.save!
 
-george = User.new(email: "george.s.ballard@outlook.com", password: "george")
+george = User.new(email: "george.s.ballard@outlook.com", password: "george", first_name: "George", last_name: "Ballard", location: "Singapore")
 # george.remote_photo_url = "https://res.cloudinary.com/cbretn/image/upload/v1550218136/d82xmivgrtpqwj7k17a7.jpg"
 george.save!
 

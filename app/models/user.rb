@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  after_save :set_default_avatar
+  # after_save :set_default_avatar
   # TODO: after_create :send_welcome_email
 
   # Include default devise modules. Others available are:
@@ -22,8 +22,8 @@ class User < ApplicationRecord
 
   private
 
-  def set_default_avatar
-    default_picture = "https://res.cloudinary.com/cbretn/image/upload/v1550819988/default-picture.png"
-    self.remote_photo_url = default_picture if photo.nil?
-  end
+  # def set_default_avatar
+  #   default_picture = "https://res.cloudinary.com/cbretn/image/upload/v1550819988/default-picture.png"
+  #   self.remote_photo_url = default_picture if photo.nil?
+  # end
 end
