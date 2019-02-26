@@ -1,3 +1,7 @@
+.btn {
+  border-radius: 8px;
+}
+
 .btn:hover {
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   border: solid 1px black;
@@ -11,6 +15,32 @@
   background-color: $red;
 }
 
-.btn-primary {
-  border-radius: 8px;
+.btn-empty {
+  background: transparent;
+}
+
+.btn-empty.btn-primary {
+  border: solid 2px $blue;
+  color: $blue;
+}
+
+.btn-empty.btn-primary:hover {
+  border: solid 2.5px $blue;
+  color: $blue;
+  font-weight: bolder;
+  text-shadow:none;
+  background-color: transparent;
+}
+
+.btn-empty.btn-danger {
+  border: solid 2px $red;
+  color: $red;
+}
+
+.btn-empty.btn-danger:hover {
+  border: solid 2.5px $red;
+  color: $red;
+  font-weight: bolder;
+  text-shadow:none;
+  background-color: transparent;
 }

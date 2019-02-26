@@ -1,12 +1,12 @@
 
 const initUpdateNavbarOnScroll = () => {
-  const navbar = document.querySelector('.navbar-wagon');
+  const navbar = document.querySelector('.navbar-ff');
   if (navbar) {
     window.addEventListener('scroll', () => {
       if (window.scrollY >= window.innerHeight) {
-        navbar.classList.add('navbar-wagon-white');
+        navbar.classList.add('navbar-ff-white');
       } else {
-        navbar.classList.remove('navbar-wagon-white');
+        navbar.classList.remove('navbar-ff-white');
       }
     });
   }
@@ -15,3 +15,4 @@ const initUpdateNavbarOnScroll = () => {
 console.log("navbar.js is read")
 
 export { initUpdateNavbarOnScroll };
+
