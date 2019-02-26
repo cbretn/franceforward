@@ -5,24 +5,57 @@
 
           <h1>Comprendre, échanger et agir sur les enjeux de société</h1><br>
 
-          </div>
         </div>
       </div>
-  </div>
+    </div>
 </div>
 
-<%= link_to "see all themes", themes_path, class: "btn btn-primary" %>
-<%= link_to "end session", categories_path, class: "btn btn-danger" %>
-<%= link_to "see all themes", themes_path, class: "btn btn-primary btn-empty" %>
-<%= link_to "end session", categories_path, class: "btn btn-danger btn-empty" %>
-
-<div class="tag tag-primary">tag 1</div>
-<div class="tag tag-success">tag 2</div>
-<div class="tag tag-info">tag 3</div>
-<div class="tag tag-warning">tag 4</div>
 
 <div class="container">
+  <h1>Front-End Helper</h1>
+  <h2>UI components</h2>
+
+  <h3>Buttons and tags</h3>
+
+  <h4>buttons</h4>
+  <%= link_to "see all themes", themes_path, class: "btn btn-primary" %>
+  <%= link_to "end session", categories_path, class: "btn btn-danger" %>
+  <%= link_to "see all themes", themes_path, class: "btn btn-primary btn-empty" %>
+  <%= link_to "end session", categories_path, class: "btn btn-danger btn-empty" %>
+  <h4>tags</h4>
+  <div class="tag tag-primary">tag 1</div>
+  <div class="tag tag-success">tag 2</div>
+  <div class="tag tag-info">tag 3</div>
+  <div class="tag tag-warning">tag 4</div>
+
+  <h3>Cards</h3>
+
+  <h4>categories card</h4>
   <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1522735338363-cc7313be0ae0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3289&q=80>')">
     Environnement
   </div> <br><br>
-</div>
+
+  <h4>theme card</h4>
+  <div class="row">
+
+    <div class="col-xs-12 col-sm-12 col-md-6">
+      <div class="card-theme">
+        <img src="https://france3-regions.francetvinfo.fr/provence-alpes-cote-d-azur/sites/regions_france3/files/styles/top_big/public/assets/images/2017/08/28/757x468_cigarettebutt_58ae9b0a01e6b_1-3230063.jpg?itok=13CioqIg">
+        <div class="card-theme-infos">
+          <h2>tabagisme</h2>
+          <p>theme description with <strong>relevant info</strong> only.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-12 col-md-6">
+      <div class="card-theme">
+        <img src="https://img.huffingtonpost.com/asset/5bbdee731f000040022593fb.jpeg">
+        <div class="card-theme-infos">
+          <h2>Racisme</h2>
+          <p>theme description with <strong>relevant info</strong> only.</p>
+        </div>
+      </div><br>
+
+    </div><br>
+ </div>
