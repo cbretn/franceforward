@@ -40,7 +40,8 @@
       </div>
     <% else %>
       <!-- Login link (when logged out) -->
-      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-ff-item navbar-ff-link" %>
+      <%= link_to t(".sign_up", default: "s'inscrire"), new_user_registration_path, class: "navbar-ff-item navbar-ff-link" %>
+      <%= link_to t(".sign_in", default: "se connecter"), new_user_session_path, class: "navbar-ff-item navbar-ff-link" %>
     <% end %>
   </div>
 
