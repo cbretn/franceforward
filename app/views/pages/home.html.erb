@@ -19,9 +19,9 @@
 
   <h4>buttons</h4>
   <%= link_to "see all themes", themes_path, class: "btn btn-primary" %>
-  <%= link_to "end session", categories_path, class: "btn btn-danger" %>
+  <%= link_to "see all categories", categories_path, class: "btn btn-danger" %>
   <%= link_to "see all themes", themes_path, class: "btn btn-primary btn-empty" %>
-  <%= link_to "end session", categories_path, class: "btn btn-danger btn-empty" %>
+  <%= link_to "see all categories", categories_path, class: "btn btn-danger btn-empty" %>
   <h4>tags</h4>
   <div class="tag tag-primary">tag 1</div>
   <div class="tag tag-success">tag 2</div>
@@ -45,6 +45,11 @@
           <h2>tabagisme</h2>
           <p>theme description with <strong>relevant info</strong> only.</p>
         </div>
+        <div class="card-theme-score">
+          <p>61</p>
+          <hr class="scope bar">
+          <hr class="impact bar">
+        </div>
       </div>
     </div>
 
@@ -55,7 +60,144 @@
           <h2>Racisme</h2>
           <p>theme description with <strong>relevant info</strong> only.</p>
         </div>
+        <div class="card-theme-score">
+          <p>54</p>
+          <hr class="scope bar">
+          <hr class="impact bar">
+        </div>
       </div><br>
 
     </div><br>
+
+    <h4>action card</h4>
+
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-4">
+
+
+          <div class="card-action">
+            <img src="https://st3.depositphotos.com/1518767/14154/i/1600/depositphotos_141547948-stock-photo-team-of-volunteers-picking-up.jpg">
+            <div class="card-action-infos">
+              <div>
+                <h2>Ramasser des déchets</h2>
+                <p>Short description here!</p>
+                <span class="tag tag-info">continue</span>
+                <span class="tag tag-success">facile</span>
+              </div>
+              <img src='https://amp.businessinsider.com/images/5899ffcf6e09a897008b5c04-750-750.jpg' class="card-action-user avatar-bordered"/>
+              <ul class="card-action-details">
+                <li><i class="fas fa-map-marker-alt"></i> Boulogne-Billancourt</li>
+                <li><i class="far fa-clock"></i> 04/03/2019</li>
+                <li><i class="fas fa-walking"></i> 26</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-4">
+
+
+          <div class="card-action">
+            <img src="https://st3.depositphotos.com/1518767/14154/i/1600/depositphotos_141547948-stock-photo-team-of-volunteers-picking-up.jpg">
+            <div class="card-action-infos">
+              <div>
+                <h2>Ramasser des déchets</h2>
+                <p>Short description here!</p>
+                <span class="tag tag-success">facile</span>
+                <span class="tag tag-primary">extérieur</span>
+                <span class="tag tag-info">continue</span>
+              </div>
+              <img src='https://amp.businessinsider.com/images/5899ffcf6e09a897008b5c04-750-750.jpg' class="card-action-user avatar-bordered"/>
+              <ul class="card-action-details">
+                <li><i class="fas fa-map-marker-alt"></i> Lyon Part-Dieu</li>
+                <li><i class="far fa-clock"></i> fin: 06/03/2019</li>
+                <li><i class="fas fa-walking"></i> 26</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-4">
+
+
+          <div class="card-action">
+            <img src="https://st3.depositphotos.com/1518767/14154/i/1600/depositphotos_141547948-stock-photo-team-of-volunteers-picking-up.jpg">
+            <div class="card-action-infos">
+              <div>
+                <h2>Ramasser des déchets</h2>
+                <p>Short description here!</p>
+                <span class="tag tag-info">continue</span>
+                <span class="tag tag-warning">groupe</span>
+              </div>
+              <img src='https://amp.businessinsider.com/images/5899ffcf6e09a897008b5c04-750-750.jpg' class="card-action-user avatar-bordered"/>
+              <ul class="card-action-details">
+                <li><i class="fas fa-map-marker-alt"></i> Saint-Étienne du Grès</li>
+                <li><i class="far fa-clock"></i> fin: 04/03/2019</li>
+                <li><i class="fas fa-walking"></i> 26 participants</li>
+              </ul>
+            </div>
+          </div><br>
+
+        </div>
+
+      </div>
+
+      <h4> Discussions </h4>
+
+      <h5>Si c'est ma propre discussion</h5>
+      <div class="discussion">
+        <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large"/>
+        <div class="discussion-content">
+          <p><small>Je ne suis pas du tout d'accord</small></p>
+          <p>C'est absolument n'importe quoi, je ne suis pas <strong>du tout</strong> d'accord.</p>
+        </div>
+
+        <div class="discussion-actions">
+          <a href="#">Edit <i class="fas fa-pencil-alt"></i></a>
+          <a href="#">Delete <i class="far fa-trash-alt"></i></a>
+        </div>
+
+        <div class="discussion-votes">
+          <p>↑ <strong>36</strong> votes</p>
+        </div>
+      </div>
+
+      <h5>Si c'est pas ma propre discussion et que j'ai pas upvoté</h5>
+      <div class="discussion">
+        <img src='https://kitt.lewagon.com/placeholder/users/Eschults' class="avatar-large"/>
+        <div class="discussion-content">
+          <p><small>Comment j'ai arrêté de fumer</small></p>
+          <p>Il y a quelques années, je pensais que je fumerai <strong>toute ma vie</strong> et pourtant...</p>
+        </div>
+
+<!--         <div class="discussion-actions">
+          <a href="#">Edit <i class="fas fa-pencil-alt"></i></a>
+          <a href="#">Delete <i class="far fa-trash-alt"></i></a>
+        </div> -->
+
+        <div class="discussion-votes">
+          <p>↑ <strong>36</strong> votes</p>
+        </div>
+      </div>
+
+      <h5>Si c'est pas ma propre discussion et que j'ai déjà upvoté</h5>
+      <div class="discussion">
+        <img src='https://kitt.lewagon.com/placeholder/users/Eschults' class="avatar-large"/>
+        <div class="discussion-content">
+          <p><small>Comment j'ai arrêté de fumer</small></p>
+          <p>Il y a quelques années, je pensais que je fumerai <strong>toute ma vie</strong> et pourtant...</p>
+        </div>
+
+<!--         <div class="discussion-actions">
+          <a href="#">Edit <i class="fas fa-pencil-alt"></i></a>
+          <a href="#">Delete <i class="far fa-trash-alt"></i></a>
+        </div> -->
+
+        <div class="discussion-votes">
+          <p>↑ <strong>36</strong> votes</p>
+        </div>
+      </div>
+
  </div>

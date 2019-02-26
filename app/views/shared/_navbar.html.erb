@@ -1,19 +1,22 @@
 <div class="navbar-ff">
   <!-- Logo -->
-  <%= link_to root_path, class: "navbar-ff-brand" do %>
-    <%= image_tag "logo.png", height: 50 %>
-    <%= image_tag "france-forward-text-big.png", height: 20 %>
-  <% end %>
-
+  <div class="navbar-ff-left">
+    <%= link_to root_path, class: "navbar-ff-brand" do %>
+      <%= image_tag "logo.png", height: 50 %>
+      <%= image_tag "france-forward-text-big.png", height: 20 %>
+    <% end %>
+    <%= link_to "Tour", conversations_path, class: "navbar-ff-item navbar-ff-link" %>
+    <i class="fas fa-search" style="color:#616668"></i>
+  </div>
   <!-- Right Navigation -->
   <div class="navbar-ff-right hidden-xs hidden-sm">
 
     <% if user_signed_in? %>
 
+      <%= link_to "Messages", conversations_path, class: "navbar-ff-item navbar-ff-link" %>
       <!-- Links when logged in -->
       <%#= link_to "Host", "#", class: "navbar-ff-item navbar-ff-link" %>
       <%#= link_to "Trips", "#", class: "navbar-ff-item navbar-ff-link" %>
-      <%= link_to "Messages", conversations_path, class: "navbar-ff-item navbar-ff-link" %>
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-ff-item">
