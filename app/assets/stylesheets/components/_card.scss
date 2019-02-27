@@ -12,7 +12,12 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin: 20px 10px;
 }
+
+.card-category:hover {
+    text-decoration: none;
+ }
 
 // themes cards
 .card-theme {
@@ -24,6 +29,7 @@
   align-items: center;
   border-radius: 5px;
   justify-content: space-between;
+  margin: 10px;
 }
 
 .card-theme img {
