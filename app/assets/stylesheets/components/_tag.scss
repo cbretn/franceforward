@@ -1,0 +1,27 @@
+.tag {
+  border-radius: 5px;
+  width: 40px;
+  font-size: 10px;
+  color: white;
+  text-align: center;
+  margin: 10px 0;
+  padding: 5px;
+}
+
+.tag-primary {
+  background-color: $light-blue;
+}
+
+.tag-success {
+  background-color: $green;
+}
+
+.tag-info {
+  background-color: $purple;
+}
+
+.tag-warning {
+  background-color: $orange;
+}
+
+// .tag

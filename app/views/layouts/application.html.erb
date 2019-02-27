@@ -14,16 +14,18 @@
   </head>
 
   <body>
-    <%= render 'shared/navbar' %>
-    <%= render 'shared/flashes' %>
+    <div id="mega-container">
+      <%= render 'shared/navbar' %>
+      <%= render 'shared/flashes' %>
 
-    <div class="container">
-      <%= yield %>
+      <div class="page-container">
+        <%= yield %>
+      </div>
+
+      <%= render 'shared/footer' %>
+      <%= javascript_include_tag 'application' %>
+      <%= javascript_pack_tag 'application' %>
     </div>
-
-    <%= render 'shared/footer' %>
-    <%= javascript_include_tag 'application' %>
-    <%= javascript_pack_tag 'application' %>
 
   </body>
 </html>

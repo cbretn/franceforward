@@ -1,0 +1,48 @@
+.btn {
+  border-radius: 8px;
+}
+
+.btn:hover {
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  border: solid 1px black;
+}
+
+.btn-primary:hover {
+  background-color: $blue;
+}
+
+.btn-danger:hover {
+  background-color: $red;
+}
+
+.btn-empty {
+  background: transparent;
+  opacity: 0.7;
+}
+
+.btn-empty.btn-primary {
+  border: solid 2px $blue;
+  color: $blue;
+}
+
+.btn-empty.btn-primary:hover {
+  opacity: 1;
+  color: $blue;
+  // font-weight: bolder;
+  text-shadow:none;
+  background-color: transparent;
+}
+
+.btn-empty.btn-danger {
+  border: solid 2px $red;
+  color: $red;
+}
+
+.btn-empty.btn-danger:hover {
+  opacity: 1;
+  // border: solid 2.5px $red;
+  color: $red;
+  // font-weight: bolder;
+  text-shadow:none;
+  background-color: transparent;
+}
