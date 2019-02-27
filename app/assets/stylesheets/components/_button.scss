@@ -17,6 +17,7 @@
 
 .btn-empty {
   background: transparent;
+  opacity: 0.7;
 }
 
 .btn-empty.btn-primary {
@@ -25,9 +26,9 @@
 }
 
 .btn-empty.btn-primary:hover {
-  border: solid 2.5px $blue;
+  opacity: 1;
   color: $blue;
-  font-weight: bolder;
+  // font-weight: bolder;
   text-shadow:none;
   background-color: transparent;
 }
@@ -38,9 +39,10 @@
 }
 
 .btn-empty.btn-danger:hover {
-  border: solid 2.5px $red;
+  opacity: 1;
+  // border: solid 2.5px $red;
   color: $red;
-  font-weight: bolder;
+  // font-weight: bolder;
   text-shadow:none;
   background-color: transparent;
 }
