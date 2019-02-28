@@ -1,0 +1,8 @@
+first_name,last_name,email,password,photo,location,admin
+Charles,Breton,charles-breton@hotmail.fr,charles,https://res.cloudinary.com/cbretn/image/upload/v1551343328/franceforward/users/charles.png,"Canggu, Bali, Indonésie",TRUE
+Spyros,Aspreas,saspreas@ajc-mail.com,spyros,https://res.cloudinary.com/cbretn/image/upload/v1551330827/franceforward/users/spyros.jpg,"Paris, France",TRUE
+Éléonore,Breton,eleonore.breton@hec.edu,eleonore,https://res.cloudinary.com/cbretn/image/upload/v1551330782/franceforward/users/eleonore.png,"Lyon, France",TRUE
+Gérard,Commercial,gerard-commercial@fake.com,gerard,https://res.cloudinary.com/cbretn/image/upload/v1551330718/franceforward/users/ge%CC%81rard.jpg,"Orléans, France",FALSE
+John,Higgins,john-higgins@fake.com,higgins,https://res.cloudinary.com/cbretn/image/upload/v1551343245/franceforward/users/john.png,"London, United Kingdom",FALSE
+George,Ballard,george-ballard@fake.com,george,https://res.cloudinary.com/cbretn/image/upload/v1551343250/franceforward/users/george.jpg,"Leeds, United Kingdom",FALSE
+Lorenzo,Xavier,lorenzo-xavier@fake.com,lorenzo,https://res.cloudinary.com/cbretn/image/upload/v1551343255/franceforward/users/Lorenzo.jpg,Singapore,FALSE

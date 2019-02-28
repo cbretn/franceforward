@@ -2,4 +2,4 @@
 <p>Find me in app/views/description/show.html.erb</p>
 <%= @description.theme.category.name %> <br>
 <%= @description.theme.name %> <br>
-<%= @description.content %> <br>
+<%= @description.content.html_safe %>
