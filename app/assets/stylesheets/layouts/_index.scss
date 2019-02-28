@@ -10,6 +10,7 @@
 
 body {
   color: $black;
+  background-color: $light-gray;
 }
 
 h1, h2, h3, h4 {
@@ -17,10 +18,10 @@ h1, h2, h3, h4 {
 }
 
 a {
-  color: $black !important;
+  // color: $black !important;
   text-decoration: none !important;
 }
 
 a:hover {
-  color: $orange !important;
+  // color: $orange !important;
 }
