@@ -1,9 +1,10 @@
 #main-banner {
   background-image: asset-url('home-banner.png');
-  width: 100%;
+  margin-left: calc(100vw - 100%);
+  margin-right: calc(100vw - 100%);
   height: calc(100vh - 50px);
-  // margin-left: -270px;
   background-size: cover;
+  margin: 0 !important;
 }
 
 .darken-overlay {
@@ -14,6 +15,7 @@
 }
 
 .main-banner-container {
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;

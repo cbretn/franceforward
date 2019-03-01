@@ -1,5 +1,7 @@
-<h1>Description#show</h1>
-<p>Find me in app/views/description/show.html.erb</p>
-<%= @description.theme.category.name %> <br>
-<%= @description.theme.name %> <br>
-<%= @description.content %> <br>
+<div class="container">
+  <h1>Description#show</h1>
+  <p>Find me in app/views/description/show.html.erb</p>
+  <%= @description.theme.category.name %> <br>
+  <%= @description.theme.name %> <br>
+  <%= sanitize @description.content %> <br>
+</div>
