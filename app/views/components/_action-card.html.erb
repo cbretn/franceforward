@@ -7,7 +7,7 @@
       <span class="tag tag-info">continue</span>
       <span class="tag tag-success">facile</span>
     </div>
-    <img src='https://amp.businessinsider.com/images/5899ffcf6e09a897008b5c04-750-750.jpg' class="card-action-user avatar-bordered"/>
+    <img src='<%= cl_image_path(action.user.photo) %>' class="card-action-user avatar-bordered"/>
     <ul class="card-action-details">
       <li><i class="fas fa-map-marker-alt"></i>  <%= action.location %></li>
       <li><i class="far fa-clock"></i> <%= action.end_date %></li>
