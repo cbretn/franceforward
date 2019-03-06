@@ -12,4 +12,8 @@ class ThemePolicy < ApplicationPolicy
   def show?
     true
   end
+
+  def all?
+    true
+  end
 end
