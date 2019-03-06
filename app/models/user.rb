@@ -14,6 +14,7 @@ class User < ApplicationRecord
   has_many :conversations, foreign_key: :user1_id, dependent: :destroy
   has_many :discussions, dependent: :destroy
   has_many :actions, dependent: :destroy
+  has_many :action_participations, dependent: :destroy
 
   # validations
   validates :first_name, presence: true

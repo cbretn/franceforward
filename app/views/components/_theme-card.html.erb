@@ -1,8 +1,8 @@
 <div class="card-theme">
-  <img src="<%= cl_image_path(theme.photo) %>">
+  <%= cl_image_tag theme.photo %>
   <div class="card-theme-infos">
     <h2><%= theme.name %></h2>
-    <p><%= theme.content %></p>
+    <p><%= theme.content.truncate(50) %></p>
   </div>
   <div class="card-theme-score">
     <p>61</p>
