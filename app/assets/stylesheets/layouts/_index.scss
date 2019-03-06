@@ -10,8 +10,18 @@
 
 body {
   color: $black;
+  background-color: $light-gray;
 }
 
 h1, h2, h3, h4 {
   font-weight: bold;
+}
+
+a {
+  // color: $black !important;
+  text-decoration: none !important;
+}
+
+a:hover {
+  // color: $orange !important;
 }

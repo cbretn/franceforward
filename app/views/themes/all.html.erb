@@ -1,14 +1,26 @@
-<h1>Themes#all</h1>
+<div class="container">
 <p>Find me in app/views/themes/all.html.erb</p>
-<% @themes.each do |theme| %>
-  <%= link_to category_theme_path(theme.category.id, theme) do %>
-    <%= theme.category.name %>
-    <%= theme.name %>
-    <% if theme.photo.file %>
-      <%= theme.photo %>
-      <%= cl_image_tag theme.photo, height: 300, width: 400, crop: :fill %>
+
+<% @categories.each do |category| %>
+
+    <%= link_to category_path(category) do %>
+      <%= render './components/category-card', category: category %>
     <% end %>
-  <% end %>
-  <%= theme.content %>
-  <br>
+
+
+    <div class="row">
+
+    <% category.themes.each do |theme| %>
+
+      <div class="col-xs-12 col-sm-12 col-md-6">
+        <%= link_to category_theme_path(theme.category.id, theme) do %>
+          <%= render './components/theme-card', theme: theme %>
+        <% end %>
+      </div>
+
+    <% end %>
+
+  </div>
+
 <% end %>
+</div>

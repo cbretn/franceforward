@@ -1,0 +1,12 @@
+<div class="card-theme">
+  <%= cl_image_tag theme.photo %>
+  <div class="card-theme-infos">
+    <h2><%= theme.name %></h2>
+    <p><%= theme.content.truncate(50) %></p>
+  </div>
+  <div class="card-theme-score">
+    <p>61</p>
+    <hr class="scope bar">
+    <hr class="impact bar">
+  </div>
+</div>

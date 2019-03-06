@@ -11,6 +11,6 @@ class ThemesController < ApplicationController
   end
 
   def all
-    @themes = Theme.all
+    @categories = Category.all
   end
 end
