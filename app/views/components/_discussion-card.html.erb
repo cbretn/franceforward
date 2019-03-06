@@ -1,0 +1,18 @@
+<div class="discussion">
+  <img src='<%= cl_image_path(discussion.user.photo) %>' class="avatar-large"/>
+  <div class="discussion-content">
+    <%= link_to category_theme_discussion_path(@theme.category, @theme, discussion) do %>
+      <p><small><%= discussion.title %></small></p>
+      <p><%= discussion.content %></p>
+    <% end %>
+  </div>
+
+  <div class="discussion-actions">
+    <a href="#">Edit <i class="fas fa-pencil-alt"></i></a>
+    <a href="#">Delete <i class="far fa-trash-alt"></i></a>
+  </div>
+
+  <div class="discussion-votes">
+    <p><i class="fas fa-caret-up"></i> <strong>24</strong> votes</p>
+  </div>
+</div>

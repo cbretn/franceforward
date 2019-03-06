@@ -1,0 +1,17 @@
+<div class="card-action">
+  <img src="https://st3.depositphotos.com/1518767/14154/i/1600/depositphotos_141547948-stock-photo-team-of-volunteers-picking-up.jpg">
+  <div class="card-action-infos">
+    <div>
+      <h2><%= action.title %></h2>
+      <p>proposé par <%= action.user.first_name %></p>
+      <span class="tag tag-info">continue</span>
+      <span class="tag tag-success">facile</span>
+    </div>
+    <img src='<%= cl_image_path(action.user.photo) %>' class="card-action-user avatar-bordered"/>
+    <ul class="card-action-details">
+      <li><i class="fas fa-map-marker-alt"></i>  <%= action.location %></li>
+      <li><i class="far fa-clock"></i> <%= action.end_date %></li>
+      <li><i class="fas fa-walking"></i>  <%= action.action_participations.count %> participants</li>
+    </ul>
+  </div>
+</div>
