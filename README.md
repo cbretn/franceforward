@@ -1,5 +1,7 @@
 # README
 
+[![Build Status](https://travis-ci.com/cbretn/franceforward.svg?branch=master)](https://travis-ci.com/cbretn/franceforward)
+
 #### WHAT IS FRANCEFORWARD?
 
 * Name
