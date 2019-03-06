@@ -1,11 +1,10 @@
-<h1>Categories#index</h1>
-<p>Find me in app/views/categories/index.html.erb</p>
-<% @categories.each do |category| %>
-  <%= link_to category_themes_path(category) do %>
-    <%= category.name %>
-    <% if category.photo.file %>
-      <%= cl_image_tag category.photo, height: 300, width: 400, crop: :fill %>
+<div class="container">
+  <h1>Catégories</h1>
+  <p>Cliquez sur une catégorie pour accéder aux thèmes !</p>
+  <% @categories.each do |category| %>
+    <%= link_to category_path(category) do %>
+      <%= render './components/category-card', category: category %>
     <% end %>
   <% end %>
   <br>
-<% end %>
+</div>
