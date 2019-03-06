@@ -11,8 +11,9 @@ test:
   <<: *default
   database: franceforward_test
 
-# production:
-#   <<: *default
-#   database: franceforward_production
-#   username: franceforward
-#   password: <%= ENV['FRANCEFORWARD_DATABASE_PASSWORD'] %>
+production:
+  <<: *default
+  database: franceforward_production
+  # username: franceforward
+  username: gqbxvihzwytjzt
+  password: <%= ENV['FRANCEFORWARD_DATABASE_PASSWORD'] %>
