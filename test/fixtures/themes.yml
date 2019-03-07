@@ -1,11 +1,12 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  category: one
-  name: MyString
-  photo: MyString
+pollution:
+  category: environnement
+  name: Pollution
+  photo: image/upload/v1551362939/x8ll737jsotbiwyphuua.jpg
+  content: Content still under redaction
 
-two:
-  category: two
-  name: MyString
-  photo: MyString
+biodiversité:
+  category: environnement
+  name: biodiversité
+  photo: image/upload/v1551362945/du3zzdave6vqpmdeldto.jpg
