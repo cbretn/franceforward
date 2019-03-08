@@ -1,11 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  content: MyText
-  theme: one
-  title: MyString
+discussion_1:
+  content: Ouvrez des écoles, vous fermerez des prisons. Fermez des prisons, ça pollura moins
+  theme: pollution
+  title: Je pense que la littérature est la solution
+  user: hugo
 
-two:
-  content: MyText
-  theme: two
-  title: MyString
+discussion_2:
+  content: Adoptons une démarche scientifique pour préserver la biodiversité
+  theme: biodiversité
+  title: Tout n'est que physique
+  user: curie

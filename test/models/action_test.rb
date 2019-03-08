@@ -1,9 +1,7 @@
 require 'test_helper'
 
 class ActionTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+
   test "saves an action only if all prerequisites are met" do
     action = Action.new
     assert_not action.save, "saved an action without a theme"

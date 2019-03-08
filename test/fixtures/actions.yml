@@ -1,19 +1,19 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  title: MyString
-  location: MyString
-  description: MyText
-  start_date: 2019-02-21
-  end_date: 2019-02-21
+action_1:
+  title: Action 1
+  location: Paris
+  description: La description de l'action 1. Rejoignez-nous !
+  start_date: 2019-04-22
+  end_date: 2019-05-30
   theme: one
   user: one
 
-two:
-  title: MyString
-  location: MyString
-  description: MyText
-  start_date: 2019-02-21
-  end_date: 2019-02-21
+action_2:
+  title: Action 2
+  location: Lyon
+  description: La description de l'action 2. Rejoignez-nous !
+  start_date: 2019-02-20
+  end_date: 2019-02-31
   theme: two
   user: two
