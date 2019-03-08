@@ -5,7 +5,8 @@ class Conversation < ActiveRecord::Base
 
   # validations
   has_many :messages, dependent: :destroy
-  validates_uniqueness_of :user1_id, scope: :user2_id
+  validates_uniqueness_of :user1_id, scope: :user2_id, message: "Conversation between these users already exists,
+  and duplicated conversations are not allowed"
   scope :between, ->(user1_id, user2_id) do
     where("(conversations.user1_id = ? AND conversations.user2_id =?) OR (conversations.user1_id = ? AND conversations.user2_id =?)", user1_id, user2_id, user2_id, user1_id)
   end
