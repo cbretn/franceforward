@@ -19,5 +19,7 @@ class ActionParticipationTest < ActiveSupport::TestCase
     hugo_part_2 = ActionParticipation.new(user: User.find_by(email: 'victor-hugo@hotmail.fr'),
                                           action: Action.find_by(title: 'Action 2'))
     assert_not hugo_part_2.save, "could save second action participation"
+    hugo_part_1.destroy
+    hugo_part_2.destroy
   end
 end
