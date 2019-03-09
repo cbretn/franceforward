@@ -17,10 +17,10 @@ class ThemeTest < ActiveSupport::TestCase
   end
 
   test "does not let two themes have the same name" do
-    theme_1 = Theme.new(category: Category.find_by(name: "Environnement", name: "Elevage Industriel",
+    theme_1 = Theme.new(category: Category.find_by(name: "Environnement"), name: "Elevage Industriel",
                         content: "Content still under redaction", photo: "image/upload/v1551362849/g1fz1yrrwlampiqiofkp.jpg")
     assert theme_1.save, "could not save first theme"
-    theme_2 = Theme.new(category: Category.find_by(name: "Environnement", name: "Elevage Industriel",
+    theme_2 = Theme.new(category: Category.find_by(name: "Environnement"), name: "Elevage Industriel",
                         content: "Content still under redaction", photo: "image/upload/v1551362849/g1fz1yrrwlampiqiofkp.jpg")
     assert_not theme_2.save, "could save second theme"
     theme_1.destroy
@@ -29,18 +29,18 @@ class ThemeTest < ActiveSupport::TestCase
 
 
   test "theme's description is destroyed when theme is" do
-    theme = Theme.new(category: Category.find_by(name: "Environnement", name: "Elevage Industriel",
+    theme = Theme.new(category: Category.find_by(name: "Environnement"), name: "Elevage Industriel",
                         content: "Content still under redaction", photo: "image/upload/v1551362849/g1fz1yrrwlampiqiofkp.jpg")
     theme.save!
     description = Description.new(content: "content still under redaction")
     description.theme = theme
     description.save!
-    conversation.destroy!
+    theme.destroy!
     assert_not Description.exists?(description.id), "description was not deleted with parent theme"
   end
 
   test "theme's discussions are destroyed when theme is" do
-    theme = Theme.new(category: Category.find_by(name: "Environnement", name: "Elevage Industriel",
+    theme = Theme.new(category: Category.find_by(name: "Environnement"), name: "Elevage Industriel",
                         content: "Content still under redaction", photo: "image/upload/v1551362849/g1fz1yrrwlampiqiofkp.jpg")
     theme.save!
     discussion_1 = Discussion.new(user: User.find_by(email: "victor-hugo@hotmail.fr"), content: "content still under redaction", title: "discussion 1")
@@ -54,7 +54,7 @@ class ThemeTest < ActiveSupport::TestCase
   end
 
   test "theme's actions are destroyed when theme is" do
-    theme = Theme.new(category: Category.find_by(name: "Environnement", name: "Elevage Industriel",
+    theme = Theme.new(category: Category.find_by(name: "Environnement"), name: "Elevage Industriel",
                         content: "Content still under redaction", photo: "image/upload/v1551362849/g1fz1yrrwlampiqiofkp.jpg")
     theme.save!
     action_1 = Action.new(user: User.find_by(email: "victor-hugo@hotmail.fr"), description: "content still under redaction", title: "action 1")
