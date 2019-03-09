@@ -11,6 +11,4 @@ class DescriptionTest < ActiveSupport::TestCase
     assert description.save, "could not save a description"
     assert description.destroy, "could not delete description"
   end
-
-
 end
