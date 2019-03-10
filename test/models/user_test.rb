@@ -15,7 +15,7 @@ class UserTest < ActiveSupport::TestCase
     user.password = "hugohugo"
     assert user.save!, "could not save a user"
     user.remote_photo_url = "https://pbs.twimg.com/profile_images/875888968558161920/qNQE606I_400x400.jpg"
-    assert_not_nil user.photo
+    assert_not_nil user.photo, "photo was not uploaded"
     assert user.destroy, "could not delete user"
   end
 
@@ -26,7 +26,31 @@ class UserTest < ActiveSupport::TestCase
                     location: "Colombey-les-deux-églises",
                     password: "hugohugo")
     user.save!
-    assert_not user.admin
+    assert_not user.admin, "new user is admin"
+  end
+
+  test "user should have default picture if no picture is set" do
+    user = User.new(email: 'charles.de.gaulle@gmail.com',
+                    first_name: "Charles",
+                    last_name: "de Gaulle",
+                    location: "Colombey-les-deux-églises",
+                    password: "hugohugo")
+    assert_nil user.remote_photo_url
+    user.save!
+    assert_match /.*default-picture.png.*/, user.remote_photo_url, "default picture was not uploaded"
+  end
+
+  test "user's conversations are fetched regardless of user1/user2 position" do
+    user = User.new(email: 'charles.de.gaulle@gmail.com',
+                    first_name: "Charles",
+                    last_name: "de Gaulle",
+                    location: "Colombey-les-deux-églises",
+                    password: "hugohugo")
+    conv_1 = Conversation.new(user1: user, user2: users(:hugo))
+    conv_1.save!
+    conv_2 = Conversation.new(user1: users(:curie), user2: user)
+    conv_2.save!
+    assert user.conversations.include?(conv_1) && user.conversations.include?(conv_2), "user.conversations does not include all conversations"
   end
 
   test "user's discussions are destroyed when user is" do
