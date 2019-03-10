@@ -1,39 +1,37 @@
 require 'test_helper'
 
 class ActionParticipationsControllerTest < ActionDispatch::IntegrationTest
-  test "should get index" do
-    get action_participations_index_url
-    assert_response :success
+
+  setup do
+    # @participation = action_participations(:one)
   end
 
-  test "should get new" do
-    get action_participations_new_url
+  teardown do
+    Rails.cache.clear
+  end
+
+  test "should get index" do
+    get category_theme_action_action_participations_path(categories(:environnement), themes(:pollution), actions(:action_1))
     assert_response :success
   end
 
   test "should get create" do
-    get action_participations_create_url
+    sign_in_as users(:hugo)
     assert_response :success
-  end
-
-  test "should get show" do
-    get action_participations_show_url
-    assert_response :success
-  end
-
-  test "should get edit" do
-    get action_participations_edit_url
-    assert_response :success
-  end
-
-  test "should get update" do
-    get action_participations_update_url
-    assert_response :success
+    assert_difference('ActionParticipation.count') do
+      post category_theme_action_action_participations_path, params: { action: actions(:action_1), theme: themes(:pollution), category: categories(:environnement)}, method: 'post'
+      # (categories(:environnement).id, themes(:pollution).id, actions(:action_1).id)
+      assert_response :success
+    end
+    assert_redirected_to category_theme_action_action_participations_path(ActionParticipation.last.action)
   end
 
   test "should get destroy" do
-    get action_participations_destroy_url
-    assert_response :success
+    sign_in_as users(:hugo)
+    assert_difference('ActionParticipation.count', -1) do
+      delete category_theme_action_action_participation_path(ActionParticipation.last)
+    end
+    assert_redirected_to category_theme_action_action_participations_path(ActionParticipation.last.action)
   end
 
 end

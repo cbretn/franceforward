@@ -35,6 +35,6 @@ class User < ApplicationRecord
   end
 
   def delete_conversations
-    Conversation.where('user1_id = :id OR user2_id = :id', id: id).map(&:destroy)
+    Conversation.where('user1_id = :id OR user2_id = :id', id: id).destroy_all
   end
 end
