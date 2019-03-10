@@ -5,9 +5,9 @@ class ActionTest < ActiveSupport::TestCase
   test "saves an action only if all prerequisites are met" do
     action = Action.new
     assert_not action.save, "saved an action without a theme"
-    action.theme = Theme.find_by(name: 'Pollution')
+    action.theme = themes(:pollution)
     assert_not action.save, "saved an action without a user"
-    action.user = User.find_by(email: 'victor-hugo@hotmail.fr')
+    action.user = users(:hugo)
     assert_not action.save, "saved an action without a title"
     action.title = "Club de lecture"
     assert_not action.save, "saved an action without a description"
