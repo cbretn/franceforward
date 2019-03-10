@@ -21,7 +21,10 @@ Capybara.javascript_driver = :headless_chrome
 
 module SignInHelper
   def sign_in_as(user)
-    post user_session_path(email: user.email, password: user.password)
+    get new_user_session_url
+    post user_session_url(email: user.email,
+                          password: user.password,
+                          remember_me: false)
   end
 end
 
