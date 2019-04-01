@@ -1,5 +1,6 @@
 class ActionParticipationsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index]
+  before_action :set_participation, only: [:destroy]
 
   def index
     @action = Action.find(params[:action_id])
@@ -13,7 +14,7 @@ class ActionParticipationsController < ApplicationController
     @action_participation.user = current_user
     authorize @action_participation
     @action_participation.save!
-    redirect_to action_participations_path(@action)
+    redirect_to category_theme_action_path(@action.theme.category.id, @action.theme.id, @action.id)
   end
 
   def destroy
@@ -21,6 +22,12 @@ class ActionParticipationsController < ApplicationController
     @action_participation = ActionParticipation.find(params[:id])
     @action = @action_participation.action
     @action_participation.destroy
-    redirect_to theme_path(@action)
+    redirect_to category_theme_action_path(@action.theme.category, @action.theme, @action)
+  end
+
+  private
+
+  def set_participation
+    @action_participation = ActionParticipation.find(params[:id])
   end
 end

@@ -24,7 +24,11 @@ module SignInHelper
     get new_user_session_url
     post user_session_url(email: user.email,
                           password: user.password,
-                          remember_me: false)
+                          remember_me: user.remember_me)
+  end
+
+  def sign_in_as2(user)
+    post sign_in_url(email: user.email, password: user.password)
   end
 end
 

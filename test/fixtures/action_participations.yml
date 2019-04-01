@@ -2,7 +2,7 @@
 
 one:
   action: action_1
-  user: hugo
+  user: curie
 
 two:
   action: action_2

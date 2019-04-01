@@ -15,5 +15,14 @@ action_2:
   description: La description de l'action 2. Rejoignez-nous !
   start_date: 2019-02-20
   end_date: 2019-02-31
-  theme: biodiversite
+  theme: biodiversité
+  user: curie
+
+action_3:
+  title: Action 3
+  location: Paris
+  description: La description de l'action 3. Rejoignez-nous !
+  start_date: 2019-02-20
+  end_date: 2019-02-31
+  theme: biodiversité
   user: curie
