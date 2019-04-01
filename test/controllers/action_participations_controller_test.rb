@@ -22,7 +22,6 @@ class ActionParticipationsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get create" do
-    sign_in users(:hugo)
     assert_difference('ActionParticipation.count', +1) do
       post category_theme_action_action_participations_url(categories(:environnement), themes(:pollution), actions(:action_1)),
            params: { action_id: actions(:action_3).id}
@@ -31,7 +30,6 @@ class ActionParticipationsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get destroy" do
-    sign_in users(:hugo)
     @theme = @action.theme
     ActionParticipation.create!(user: users(:hugo),
                                           action: @action)
@@ -43,6 +41,9 @@ class ActionParticipationsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should not let a user destroy another user's participation" do
-
+    assert_raises Pundit::NotAuthorizedError do
+      delete category_theme_action_action_participation_url(categories(:environnement).id, themes(:pollution).id, actions(:action_1).id, ActionParticipation.last.id),
+             params: { id: action_participations(:two).id}
+    end
   end
 end
