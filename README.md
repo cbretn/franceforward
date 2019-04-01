@@ -2,23 +2,25 @@
 
 #### WHAT IS FRANCEFORWARD?
 
-* Name
-France Forward
+**Name** : France Forward
 
-* Tagline
-Understand, discuss and act on issues around you
+**Tagline** : Understand, discuss and act on issues around you
 
- 1 - What's the pain? Which problem do we want to fix?
+ *What's the pain? Which problem do we want to fix?*
+
 90% of citizens want to act for the good of society, but only 10% do so. It’s hard to get involved on your own terms, while non-profits struggle to find volunteers
 
-2 - The first user segment (the more niche the better)
+*The first user segment (the more niche the better)*
+
 Socially-conscious tech-savvy French citizens
 Non-profits
 
-3 - The attempted solution
+*The attempted solution*
+
 A platform referencing/describing social issues, with a collaborative discussions/actions management tool where people can join actions around them
 
-4 - How will the solution be original & innovative?
+*How will the solution be original & innovative?*
+
 Original: bottom-up approach to social impact, easy for ppl to get involved
 Innovative: inventing the tools & behaviours for widespread collaboration
 
