@@ -35,23 +35,33 @@ class ActionsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get show" do
-    get actions_show_url
+    get category_theme_action_url(categories(:environnement), themes(:pollution), @action)
     assert_response :success
   end
 
   test "should get edit" do
-    get actions_edit_url
+    get edit_category_theme_action_url(@action) # (categories(:environnement), themes(:pollution), actions(:action_1))
     assert_response :success
   end
 
   test "should get update" do
-    get actions_update_url
+    put category_theme_action_url(@action)
     assert_response :success
   end
 
   test "should get destroy" do
-    get actions_destroy_url
+    assert_difference('Action.count', -1) do
+      delete category_theme_action_url(@action)
+    end
     assert_response :success
   end
-
 end
+
+# category_theme_actions GET    /categories/:category_id/themes/:theme_id/actions(.:format)                                      actions#index
+#                                             POST   /categories/:category_id/themes/:theme_id/actions(.:format)                                      actions#create
+#                   new_category_theme_action GET    /categories/:category_id/themes/:theme_id/actions/new(.:format)                                  actions#new
+#                  edit_category_theme_action GET    /categories/:category_id/themes/:theme_id/actions/:id/edit(.:format)                             actions#edit
+#                       category_theme_action GET    /categories/:category_id/themes/:theme_id/actions/:id(.:format)                                  actions#show
+#                                             PATCH  /categories/:category_id/themes/:theme_id/actions/:id(.:format)                                  actions#update
+#                                             PUT    /categories/:category_id/themes/:theme_id/actions/:id(.:format)                                  actions#update
+#                                             DELETE /categories/:category_id/themes/:theme_id/actions/:id(.:format)                                  actions#destroy
