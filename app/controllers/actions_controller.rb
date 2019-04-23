@@ -1,6 +1,7 @@
 class ActionsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
-  before_action :set_action, only: [:show, :edit, :update]
+  before_action :set_action, only: [:show, :edit, :update, :destroy]
+  # require 'pry-byebug'
 
   def index
     @theme = Theme.find(params[:theme_id])
@@ -15,6 +16,7 @@ class ActionsController < ApplicationController
   end
 
   def create
+    # binding.pry
     @action = Action.new(action_params)
     @theme = Theme.find(params[:theme_id])
     @action.theme = @theme
@@ -27,14 +29,20 @@ class ActionsController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+    authorize @action
+  end
 
-  def edit; end
+  def edit
+    authorize @action
+    @theme = @action.theme
+    @category = @theme.category
+  end
 
   def update
     authorize @action
     if @action.update(action_params)
-      redirect_to action_path(@action)
+      redirect_to category_theme_action_path(@action.theme.category, @action.theme, @action)
     else
       render :edit
     end
@@ -43,9 +51,9 @@ class ActionsController < ApplicationController
   def destroy
     authorize @action
     @action = Action.find(params[:id])
-    # @theme = @action.theme
+    @theme = @action.theme
     @action.destroy
-    redirect_to theme_path(@theme)
+    redirect_to category_theme_path(@theme.category, @theme)
   end
 
   private
