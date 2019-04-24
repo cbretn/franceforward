@@ -63,7 +63,6 @@ class ActionsController < ApplicationController
   end
 
   def action_params
-    # params.require(:action).permit(:location, :title, :description, :start_date, :end_date, :description)
     params.require(:action).permit(:title, :location, :start_date, :end_date, :description)
   end
 end
