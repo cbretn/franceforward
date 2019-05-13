@@ -1,98 +1,63 @@
-# require 'test_helper'
+require 'test_helper'
+# require 'pry-byebug'
 
-# class DiscussionsControllerTest < ActionDispatch::IntegrationTest
-#   test "should get index" do
-#     get category_theme_discussionas_url(categories(:environnement), themes(:pollution))
-#     assert_response :success
-#   end
+class DiscussionsControllerTest < ActionDispatch::IntegrationTest
 
-#   test "should get new" do
-#     get discussions_new_url
-#     assert_response :success
-#   end
+  include Devise::Test::IntegrationHelpers
 
-#   test "should get create" do
-#     get discussions_create_url
-#     assert_response :success
-#   end
+  setup do
+    sign_in users(:hugo)
+    @fixture_discussion = Discussion.create!(title: "Discussion 3",
+                            content: "Je pense que ça",
+                            theme: themes(:biodiversité),
+                            user: users(:hugo))
+  end
 
-#   test "should get show" do
-#     get discussions_show_url
-#     assert_response :success
-#   end
+  teardown do
+    Rails.cache.clear
+  end
 
-#   test "should get edit" do
-#     get discussions_edit_url
-#     assert_response :success
-#   end
+  test "should get index" do
+    get category_theme_discussions_url(categories(:environnement).id, themes(:pollution).id)
+    assert_response :success
+  end
 
-#   test "should get update" do
-#     get discussions_update_url
-#     assert_response :success
-#   end
+  test "should get new" do
+    get new_category_theme_discussion_url(categories(:environnement), themes(:pollution))
+    assert_response :success
+  end
 
-#   test "should get destroy" do
-#     get discussions_destroy_url
-#     assert_response :success
-#   end
+  test "should get create" do
+    assert_difference('Discussion.count', +1) do
+      post category_theme_discussions_url(categories(:environnement), themes(:pollution)),
+           params: {discussion: {title: "Action Test", content: "lorem ipsum"}, theme_id: themes(:pollution).id}
+    end
+    assert_redirected_to category_theme_discussion_path(Discussion.last.theme.category.id, Discussion.last.theme.id, Discussion.last.id)
+  end
 
-#   include Devise::Test::IntegrationHelpers
+  test "should get show" do
+    get category_theme_discussion_url(categories(:environnement), themes(:pollution), @fixture_discussion)
+    assert_response :success
+  end
 
-#   setup do
-#     sign_in users(:hugo)
-#     @fixture_action = Action.create!(title: "Action 4", location: "Paris",
-#                             description: "desc", start_date: '2019-02-20',
-#                             end_date: '2019-02-31',
-#                             theme: themes(:biodiversité),
-#                             user: users(:hugo))
-#   end
+  test "should get edit" do
+    get edit_category_theme_discussion_url(@fixture_discussion.theme.category, @fixture_discussion.theme, @fixture_discussion)
+    assert_response :success
+  end
 
-#   teardown do
-#     Rails.cache.clear
-#   end
+  test "should get update" do
+    put category_theme_discussion_url(@fixture_discussion.theme.category, @fixture_discussion.theme, @fixture_discussion),
+      params: {discussion: {theme_id: @fixture_discussion.theme.id, id: @fixture_discussion.id, title: "discussion 4 Updated"}}
+    assert_redirected_to category_theme_discussion_path(@fixture_discussion)
+  end
 
-#   test "should get index" do
-#     get category_theme_actions_url(categories(:environnement), themes(:pollution))
-#     assert_response :success
-#   end
+  test "should get destroy" do
+    assert_difference('Discussion.count', -1) do
+      delete category_theme_discussion_url(@fixture_discussion.theme.category, @fixture_discussion.theme, @fixture_discussion),
+        params: {theme_id: @fixture_discussion.theme.id, id: @fixture_discussion.id}
+    end
+    assert_redirected_to category_theme_path(@fixture_discussion.theme.category, @fixture_discussion.theme)
+  end
 
-#   test "should get new" do
-#     get new_category_theme_action_url(categories(:environnement), themes(:pollution))
-#     assert_response :success
-#   end
 
-#   # Should be fixed in a next task renaming the action model
-#   # test "should get create" do
-#   #   assert_difference('Action.count', +1) do
-#   #     post category_theme_actions_url(categories(:environnement), themes(:pollution)),
-#   #          params: {title: "Action Test", location: "Paris", start_date: "2030-01-01", end_date: "2030-12-31", description: "lorem ipsum", theme_id: themes(:pollution).id}
-#   #   end
-#   #   assert_redirected_to category_theme_action_path(Action.last.theme.category.id, Action.last.theme.id, Action.last.id)
-#   # end
-
-#   test "should get show" do
-#     get category_theme_action_url(categories(:environnement), themes(:pollution), @fixture_action)
-#     assert_response :success
-#   end
-
-#   test "should get edit" do
-#     get edit_category_theme_action_url(@fixture_action.theme.category, @fixture_action.theme, @fixture_action)
-#     assert_response :success
-#   end
-
-#   # Should be fixed in a next task renaming the action model
-#   # test "should get update" do
-#   #   put category_theme_action_url(@fixture_action.theme.category, @fixture_action.theme, @fixture_action),
-#   #     params: {theme_id: @fixture_action.theme.id, id: @fixture_action.id, title: "Action 4 Updated"}
-#   #   assert_response :success
-#   # end
-
-#   test "should get destroy" do
-#     assert_difference('Action.count', -1) do
-#       delete category_theme_action_url(@fixture_action.theme.category, @fixture_action.theme, @fixture_action),
-#         params: {theme_id: @fixture_action.theme.id, id: @fixture_action.id}
-#     end
-#     assert_redirected_to category_theme_path(@fixture_action.theme.category, @fixture_action.theme)
-#   end
-
-# end
+end

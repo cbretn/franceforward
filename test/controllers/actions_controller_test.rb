@@ -1,6 +1,7 @@
 require 'test_helper'
 
 class ActionsControllerTest < ActionDispatch::IntegrationTest
+
   include Devise::Test::IntegrationHelpers
 
   setup do
@@ -59,4 +60,5 @@ class ActionsControllerTest < ActionDispatch::IntegrationTest
     end
     assert_redirected_to category_theme_path(@fixture_action.theme.category, @fixture_action.theme)
   end
+
 end

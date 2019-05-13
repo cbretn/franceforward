@@ -1,15 +1,17 @@
 class DiscussionsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
-  before_action :set_discussion, only: [:show, :edit, :update]
+  before_action :set_discussion, only: [:show, :edit, :update, :destroy]
 
   def index
     @theme = Theme.find(params[:theme_id])
+    @category = @theme.category
     @discussions = policy_scope(Discussion).where(theme: @theme)
   end
 
   def new
     @discussion = Discussion.new
     @theme = Theme.find(params[:theme_id])
+    @category = @theme.category
     authorize @discussion
   end
 
@@ -26,14 +28,20 @@ class DiscussionsController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+    authorize @discussion
+  end
 
-  def edit; end
+  def edit
+    @theme = @discussion.theme
+    @category = @theme.category
+    authorize @discussion
+  end
 
   def update
     authorize @discussion
     if @discussion.update(discussion_params)
-      redirect_to discussion_path(@discussion)
+      redirect_to category_theme_discussion_path(@discussion)
     else
       render :edit
     end
@@ -41,10 +49,9 @@ class DiscussionsController < ApplicationController
 
   def destroy
     authorize @discussion
-    @discussion = Discussion.find(params[:id])
-    # @theme = @discussion.theme
+    @theme = @discussion.theme
     @discussion.destroy
-    redirect_to theme_path(@theme)
+    redirect_to category_theme_path(@theme.category, @theme)
   end
 
   private

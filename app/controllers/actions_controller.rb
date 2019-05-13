@@ -1,7 +1,6 @@
 class ActionsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_action, only: [:show, :edit, :update, :destroy]
-  # require 'pry-byebug'
 
   def index
     @theme = Theme.find(params[:theme_id])
@@ -16,7 +15,6 @@ class ActionsController < ApplicationController
   end
 
   def create
-    # binding.pry
     @action = Action.new(action_params)
     @theme = Theme.find(params[:theme_id])
     @action.theme = @theme
