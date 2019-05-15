@@ -37,7 +37,6 @@ A platform referencing/describing social issues, with a collaborative discussion
 Original: bottom-up approach to social impact, easy for ppl to get involved
 Innovative: inventing the tools & behaviours for widespread collaboration
 
-
 ## FRANCEFORWARD DEV SPECIFIC INFORMATION
 
 Everyone is welcome to work on the project, which is for now fully open-source.
