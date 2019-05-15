@@ -15,6 +15,28 @@ It takes the form of a platform referencing and describing social issues, with a
 
 The platform takes a bottom-up approach to social impact, making it as easy as possible for people to get involved, while inventing the tools & behaviours for widespread collaboration
 
+**Name** : France Forward
+
+**Tagline** : Understand, discuss and act on issues around you
+
+ *What's the pain? Which problem do we want to fix?*
+
+90% of citizens want to act for the good of society, but only 10% do so. It’s hard to get involved on your own terms, while non-profits struggle to find volunteers
+
+*The first user segment (the more niche the better)*
+
+Socially-conscious tech-savvy French citizens
+Non-profits
+
+*The attempted solution*
+
+A platform referencing/describing social issues, with a collaborative discussions/actions management tool where people can join actions around them
+
+*How will the solution be original & innovative?*
+
+Original: bottom-up approach to social impact, easy for ppl to get involved
+Innovative: inventing the tools & behaviours for widespread collaboration
+
 
 ## FRANCEFORWARD DEV SPECIFIC INFORMATION
 
