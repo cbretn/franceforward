@@ -4,6 +4,7 @@ class ThemesController < ApplicationController
   def index
     @category = Category.find(params[:category_id])
     @themes = Theme.where(category: @category)
+    @themes = policy_scope(Theme).where(category: @theme)
   end
 
   def show

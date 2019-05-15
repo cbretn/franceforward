@@ -3,7 +3,10 @@ class ConversationsController < ApplicationController
 
   def index
     @users = User.all
-    @conversations = Conversation.all
+    # @conversations = Conversation.all
+    @conversations = policy_scope(Conversation).where('user1_id= ? OR user2_id =?', current_user.id, current_user.id) # current_user, user2: current_user)
+    # @user = current_user
+    # @conversations = policy_scope(Conversation).where(user1_id: @user.id)
   end
 
   def create
@@ -12,6 +15,7 @@ class ConversationsController < ApplicationController
     else
       @conversation = Conversation.create!(conversation_params)
     end
+    authorize @conversation
     redirect_to conversation_messages_path(@conversation)
   end
 
