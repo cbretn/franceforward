@@ -1,5 +1,6 @@
 class User < ApplicationRecord
-  # after_save :set_default_avatar
+  after_save :set_default_avatar
+  after_destroy :delete_conversations
   # TODO: after_create :send_welcome_email
 
   # Include default devise modules. Others available are:
@@ -11,7 +12,8 @@ class User < ApplicationRecord
   mount_uploader :photo, PhotoUploader
 
   # associations
-  has_many :conversations, foreign_key: :user1_id, dependent: :destroy
+  # has_many :conversations, foreign_key: :user1_id, dependent: :destroy
+  has_many :messages, foreign_key: :user_id, dependent: :destroy
   has_many :discussions, dependent: :destroy
   has_many :actions, dependent: :destroy
   has_many :action_participations, dependent: :destroy
@@ -21,10 +23,18 @@ class User < ApplicationRecord
   validates :last_name, presence: true
   validates :location, presence: true
 
+  def conversations
+    Conversation.where('user1_id = :id OR user2_id = :id', id: id)
+  end
+
   private
 
-  # def set_default_avatar
-  #   default_picture = "https://res.cloudinary.com/cbretn/image/upload/v1550819988/default-picture.png"
-  #   self.remote_photo_url = default_picture if photo.nil?
-  # end
+  def set_default_avatar
+    default_picture = "https://res.cloudinary.com/cbretn/image/upload/v1550819988/default-picture.png"
+    self.remote_photo_url = default_picture if photo.file.nil?
+  end
+
+  def delete_conversations
+    Conversation.where('user1_id = :id OR user2_id = :id', id: id).destroy_all
+  end
 end

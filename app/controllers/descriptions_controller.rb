@@ -3,5 +3,6 @@ class DescriptionsController < ApplicationController
 
   def show
     @description = Theme.find(params[:theme_id]).description
+    authorize @description
   end
 end

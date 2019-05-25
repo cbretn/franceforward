@@ -6,6 +6,6 @@ class Action < ApplicationRecord
 
   # validations
   validates :title, presence: true
-  validates :description, presence: true # minimum characters
-  # check-in / check-out ?
+  validates :description, presence: true # TODO: minimum characters
+  # TODO: start-date < end-date
 end

@@ -1,18 +1,25 @@
 require 'test_helper'
 
 class MessagesControllerTest < ActionDispatch::IntegrationTest
-  test "should get index" do
-    get messages_index_url
-    assert_response :success
+
+  include Devise::Test::IntegrationHelpers
+
+  setup do
+    sign_in users(:hugo)
   end
 
-  test "should get new" do
-    get messages_new_url
+  teardown do
+    Rails.cache.clear
+  end
+
+  test "should get index" do
+    get conversation_messages_path(conversations(:vicurie))
     assert_response :success
   end
 
   test "should get create" do
-    get messages_create_url
+    post conversation_messages_path(conversations(:vicurie)),
+      params: {message: {body: "Hello, Marie, ça roule?"}}
     assert_response :success
   end
 

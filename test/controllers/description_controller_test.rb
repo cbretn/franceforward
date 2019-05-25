@@ -2,7 +2,7 @@ require 'test_helper'
 
 class DescriptionControllerTest < ActionDispatch::IntegrationTest
   test "should get show" do
-    get description_show_url
+    get category_theme_description_url(categories(:environnement), themes(:pollution), descriptions(:pollution_desc))
     assert_response :success
   end
 

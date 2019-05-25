@@ -16,7 +16,7 @@ Rails.application.routes.draw do
       resource :description, only: [:show]
       resources :discussions
       resources :actions do
-        resources :action_participations
+        resources :action_participations, only: [:index, :create, :destroy]
       end
     end
   end

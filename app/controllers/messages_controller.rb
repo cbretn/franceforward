@@ -5,7 +5,9 @@ class MessagesController < ApplicationController
   end
 
   def index
-    @messages = @conversation.messages
+    # @messages = @conversation.messages
+    # authorize @messages
+    @messages = policy_scope(Message).where(conversation: @conversation)
     if @messages.length > 10
       @over_ten = true
       @messages = @messages[-10..-1]
@@ -25,6 +27,7 @@ class MessagesController < ApplicationController
 
   def create
     @message = @conversation.messages.new(message_params)
+    authorize @message
     if @message.save
       redirect_to conversation_messages_path(@conversation)
     end
