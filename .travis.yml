@@ -1,6 +1,6 @@
 language: ruby
 cache:
-  bundler: true
+#  bundler: true
   yarn: true
 services:
   - redis-server
