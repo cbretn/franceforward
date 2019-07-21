@@ -13,6 +13,7 @@ addons:
 before_script:
   - psql -c 'create database franceforward_test;' -U postgres
 script:
+  - bundle install
   - bundle exec rake db:schema:load
   - bundle exec rake db:test:prepare
   - SECRET_KEY_BASE=a RAILS_ENV=production bundle exec rake assets:precompile
