@@ -61,3 +61,5 @@ After cloning, you will probably have to run migrations, and install/update ruby
 
 Features are tracked via a shared Airtable. If you want to contribute, please reach out to charles.bretn@gmail.com.
 
+Thanks
+

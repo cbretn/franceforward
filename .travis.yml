@@ -6,6 +6,8 @@ services:
   - redis-server
 sudo: required
 before_install:
+- gem update --system
+- gem install bundler
 - sudo apt-get update
 - sudo apt-get install google-chrome-stable
 addons:
@@ -13,6 +15,7 @@ addons:
 before_script:
   - psql -c 'create database franceforward_test;' -U postgres
 script:
+  - bundle install
   - bundle exec rake db:schema:load
   - bundle exec rake db:test:prepare
   - SECRET_KEY_BASE=a RAILS_ENV=production bundle exec rake assets:precompile
