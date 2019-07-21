@@ -260,7 +260,7 @@ DEPENDENCIES
   binding_of_caller
   bootsnap
   bootstrap-sass (~> 3.3)
-  capybara
+  capybara (>= 2.15)
   carrierwave (~> 1.2)
   chromedriver-helper
   cloudinary (~> 1.9.1)
